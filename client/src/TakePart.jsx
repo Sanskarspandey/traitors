@@ -62,9 +62,10 @@ function TakePart() {
 
     if (!validate()) return;
 
-    const apiEndpoint = import.meta.env.VITE_API_URL
-      ? `${import.meta.env.VITE_API_URL}/api/players`
-      : "http://localhost:5050/api/players";
+    setIsSubmitting(true);
+
+    const apiRoot = (import.meta.env.VITE_API_URL || "http://localhost:5050").replace(/\/+$/, "");
+    const apiEndpoint = `${apiRoot}/api/players`;
 
     try {
       const response = await fetch(apiEndpoint, {
@@ -84,10 +85,19 @@ function TakePart() {
       if (response.ok) {
         setIsSubmitted(true);
       } else {
+        console.error("Registration request rejected:", {
+          url: apiEndpoint,
+          status: response.status,
+          statusText: response.statusText,
+          body: data,
+        });
         alert(data.message || "Something went wrong while submitting your entry request.");
       }
     } catch (error) {
-      console.error("Submission error:", error);
+      console.error("Failed to connect to backend server:", {
+        url: apiEndpoint,
+        error: error.message || error,
+      });
       alert("Unable to connect to the server. Please check your connection and try again.");
     } finally {
       setIsSubmitting(false);

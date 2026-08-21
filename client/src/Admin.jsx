@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import "./Admin.css";
 
-const API_ROOT = import.meta.env.VITE_API_URL || "http://localhost:5050";
+const API_ROOT = (import.meta.env.VITE_API_URL || "http://localhost:5050").replace(/\/+$/, "");
 const API_BASE = `${API_ROOT}/api/players`;
 const AUTH_URL = `${API_ROOT}/api/auth/login`;
 
