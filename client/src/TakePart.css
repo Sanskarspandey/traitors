@@ -1,0 +1,650 @@
+/* =========================================
+   THE TRAITORS MUMBAI — TAKE PART PAGE
+   Enhanced Scale & Typography
+   ========================================= */
+
+.take-page {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: #050505;
+  color: #f1eadc;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 18px;
+}
+
+/* =========================================
+   BACKGROUND
+   ========================================= */
+
+.take-page-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.78)),
+    url("/images/mansion.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1.03);
+}
+
+.take-page-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.88));
+  pointer-events: none;
+}
+
+/* =========================================
+   DECORATIVE IMAGES
+   ========================================= */
+
+.take-page::before {
+  content: "";
+  position: fixed;
+  left: -100px;
+  bottom: -80px;
+  width: 460px;
+  height: 640px;
+  background-image: url("/images/masked-hero.png");
+  background-size: contain;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  z-index: 2;
+  pointer-events: none;
+  filter: brightness(0.65) contrast(1.1);
+}
+
+.take-page::after {
+  content: "";
+  position: fixed;
+  right: -70px;
+  top: 120px;
+  width: 440px;
+  height: 550px;
+  background-image: url("/images/shield.png");
+  background-size: contain;
+  background-position: right center;
+  background-repeat: no-repeat;
+  opacity: 0.32;
+  z-index: 2;
+  pointer-events: none;
+  filter: brightness(0.7) contrast(1.15);
+}
+
+/* =========================================
+   MAIN CONTENT
+   ========================================= */
+
+.take-page-content {
+  position: relative;
+  z-index: 5;
+  width: min(1240px, calc(100% - 60px));
+  margin: 0 auto;
+  padding: 45px 0 95px;
+}
+
+/* =========================================
+   BACK HOME
+   ========================================= */
+
+.back-home {
+  display: inline-block;
+  margin-bottom: 55px;
+  color: #c5a45f;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+  font-family: "Cinzel", Georgia, serif;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.back-home:hover {
+  color: #f0d58b;
+  transform: translateX(-5px);
+}
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.take-header {
+  max-width: 850px;
+  margin-bottom: 65px;
+}
+
+.gold-label {
+  color: #b89b5e;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  margin-bottom: 22px;
+  font-family: "Cinzel", Georgia, serif;
+}
+
+.take-header h1 {
+  margin: 0;
+  color: #f3ead8;
+  font-family: "Cinzel", Georgia, serif;
+  font-size: clamp(65px, 8.5vw, 120px);
+  font-weight: 400;
+  line-height: 0.88;
+  letter-spacing: 2px;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.85);
+}
+
+.gold-line {
+  width: 110px;
+  height: 2px;
+  margin: 35px 0 25px;
+  background: #b89b5e;
+}
+
+.take-header > p:last-child {
+  color: rgba(243, 234, 216, 0.85);
+  font-size: 20px;
+  line-height: 1.7;
+  letter-spacing: 0.12em;
+}
+
+/* =========================================
+   FORM + PRICE PANEL
+   ========================================= */
+
+.registration-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(360px, 0.85fr);
+  gap: 55px;
+  align-items: start;
+}
+
+/* =========================================
+   FORM
+   ========================================= */
+
+.player-form {
+  position: relative;
+  padding: 55px 50px;
+  background: linear-gradient(135deg, rgba(15, 15, 15, 0.94), rgba(7, 7, 7, 0.88));
+  border: 1px solid rgba(184, 155, 94, 0.35);
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(12px);
+}
+
+/* =========================================
+   FORM HEADINGS
+   ========================================= */
+
+.form-heading {
+  display: flex;
+  gap: 22px;
+  margin-bottom: 42px;
+}
+
+.form-heading > span {
+  color: #b89b5e;
+  font-size: 16px;
+  letter-spacing: 0.18em;
+  padding-top: 6px;
+  font-family: "Cinzel", Georgia, serif;
+}
+
+.form-heading h2 {
+  margin: 0 0 10px;
+  color: #f1eadc;
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+.form-heading p {
+  margin: 0;
+  color: rgba(241, 234, 220, 0.6);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   FIELDS
+   ========================================= */
+
+.field {
+  margin-bottom: 34px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 12px;
+  color: #b89b5e;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  font-family: "Cinzel", Georgia, serif;
+}
+
+.field input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 18px 0;
+  color: #f1eadc;
+  font-size: 20px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(241, 234, 220, 0.28);
+  outline: none;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.field input::placeholder {
+  color: rgba(241, 234, 220, 0.3);
+}
+
+.field input:focus {
+  border-bottom-color: #b89b5e;
+}
+
+.field small {
+  display: block;
+  margin-top: 8px;
+  color: #e27d70;
+  font-size: 13px;
+}
+
+/* =========================================
+   CONSENT NOTE
+   ========================================= */
+
+.consent-text {
+  margin: 24px 0 0;
+  color: rgba(241, 234, 220, 0.5);
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+}
+
+/* =========================================
+   SUCCESS CARD
+   ========================================= */
+
+.success-card {
+  position: relative;
+  padding: 65px 50px;
+  background: linear-gradient(135deg, rgba(18, 15, 11, 0.96), rgba(8, 7, 6, 0.94));
+  border: 1px solid rgba(184, 155, 94, 0.45);
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(12px);
+  text-align: center;
+}
+
+.success-crest {
+  color: #c5a45f;
+  font-size: 52px;
+  margin-bottom: 15px;
+}
+
+.success-tag {
+  color: #b89b5e;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  margin-bottom: 18px;
+  font-family: "Cinzel", Georgia, serif;
+}
+
+.success-title {
+  margin: 0;
+  color: #f3ead8;
+  font-family: "Cinzel", Georgia, serif;
+  font-size: clamp(34px, 4.5vw, 50px);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+}
+
+.center-gold-line {
+  width: 80px;
+  height: 2px;
+  margin: 25px auto 30px;
+  background: #b89b5e;
+}
+
+.success-main-msg {
+  color: #f1eadc;
+  font-size: 26px;
+  margin: 0 0 12px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+.success-sub-msg {
+  color: #c5a45f;
+  font-size: 19px;
+  margin: 0 0 30px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+.success-note {
+  padding: 22px 28px;
+  margin: 30px 0 40px;
+  border: 1px solid rgba(184, 155, 94, 0.25);
+  background: rgba(0, 0, 0, 0.5);
+  color: rgba(241, 234, 220, 0.75);
+  font-size: 15px;
+  line-height: 1.8;
+  letter-spacing: 0.06em;
+}
+
+.success-return-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 250px;
+  padding: 18px 36px;
+  color: #f5e4c0;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  font-family: "Cinzel", Georgia, serif;
+  border: 1px solid #ad7936;
+  border-radius: 4px;
+  background: linear-gradient(180deg, #681111, #350707);
+  transition: all 0.25s ease;
+}
+
+.success-return-btn:hover {
+  transform: translateY(-3px);
+  border-color: #e0c27c;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+/* =========================================
+   REQUEST ENTRY BUTTON
+   ========================================= */
+
+.payment-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding: 22px 28px;
+  color: #0b0b0b;
+  background: #b89b5e;
+  border: none;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  font-family: "Cinzel", Georgia, serif;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.payment-button span {
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.payment-button span:last-child {
+  font-size: 24px;
+}
+
+.payment-button:hover {
+  background: #d0b576;
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(184, 155, 94, 0.25);
+}
+
+.payment-button:hover span:last-child {
+  transform: translateX(6px);
+}
+
+.payment-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================================
+   PRICE PANEL
+   ========================================= */
+
+.price-panel {
+  position: sticky;
+  top: 35px;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: linear-gradient(145deg, rgba(28, 23, 15, 0.97), rgba(10, 9, 7, 0.96));
+  border: 1px solid rgba(184, 155, 94, 0.45);
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.7);
+}
+
+.price-panel::after {
+  content: "";
+  position: absolute;
+  right: -80px;
+  bottom: -80px;
+  width: 350px;
+  height: 460px;
+  background-image: url("/images/sword.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+  transform: rotate(-8deg);
+  pointer-events: none;
+}
+
+/* =========================================
+   PANEL TOP
+   ========================================= */
+
+.panel-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  color: rgba(241, 234, 220, 0.6);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  font-family: "Cinzel", Georgia, serif;
+  border-bottom: 1px solid rgba(184, 155, 94, 0.25);
+}
+
+.crest {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c5a45f;
+  font-family: Georgia, serif;
+  font-size: 26px;
+  border: 1px solid rgba(184, 155, 94, 0.5);
+}
+
+/* =========================================
+   PANEL MIDDLE
+   ========================================= */
+
+.panel-middle {
+  flex: 1;
+  padding: 60px 45px;
+}
+
+.panel-middle > p {
+  margin: 0 0 14px;
+  color: #b89b5e;
+  font-size: 13px;
+  letter-spacing: 0.25em;
+  font-family: "Cinzel", Georgia, serif;
+}
+
+.panel-middle h2 {
+  margin: 0;
+  color: #f3ead8;
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 72px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.panel-middle > span {
+  color: rgba(241, 234, 220, 0.5);
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  font-family: "Cinzel", Georgia, serif;
+  display: block;
+  margin-top: 8px;
+}
+
+.panel-line {
+  width: 100%;
+  height: 1px;
+  margin: 45px 0;
+  background: rgba(184, 155, 94, 0.25);
+}
+
+/* =========================================
+   BOOKING INFO
+   ========================================= */
+
+.booking-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.booking-info div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.booking-info small {
+  color: rgba(241, 234, 220, 0.4);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  font-family: "Cinzel", Georgia, serif;
+}
+
+.booking-info strong {
+  color: #e9ddc7;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+/* =========================================
+   PANEL BOTTOM
+   ========================================= */
+
+.panel-bottom {
+  padding: 32px 40px;
+  border-top: 1px solid rgba(184, 155, 94, 0.25);
+}
+
+.panel-bottom p {
+  margin: 0 0 14px;
+  color: rgba(241, 234, 220, 0.75);
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.12em;
+}
+
+.panel-bottom span {
+  color: #b89b5e;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  font-family: "Cinzel", Georgia, serif;
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 900px) {
+  .take-page-content {
+    width: min(100% - 36px, 750px);
+    padding-top: 30px;
+  }
+
+  .back-home {
+    margin-bottom: 45px;
+  }
+
+  .registration-layout {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .price-panel {
+    position: relative;
+    top: auto;
+    min-height: 480px;
+  }
+
+  .take-page::before {
+    width: 320px;
+    height: 450px;
+    left: -100px;
+    opacity: 0.35;
+  }
+
+  .take-page::after {
+    width: 300px;
+    height: 380px;
+    right: -90px;
+    opacity: 0.2;
+  }
+}
+
+@media (max-width: 600px) {
+  .take-page-content {
+    width: calc(100% - 28px);
+    padding-bottom: 50px;
+  }
+
+  .take-header {
+    margin-bottom: 45px;
+  }
+
+  .take-header h1 {
+    font-size: clamp(52px, 16vw, 78px);
+  }
+
+  .player-form {
+    padding: 35px 24px;
+  }
+
+  .form-heading {
+    gap: 16px;
+  }
+
+  .form-heading h2 {
+    font-size: 25px;
+  }
+
+  .panel-middle {
+    padding: 45px 28px;
+  }
+
+  .panel-middle h2 {
+    font-size: 58px;
+  }
+
+  .booking-info {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .panel-top {
+    padding: 24px;
+  }
+}
