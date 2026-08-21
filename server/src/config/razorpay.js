@@ -4,15 +4,13 @@ import Razorpay from "razorpay";
 const keyId = process.env.RAZORPAY_KEY_ID;
 const keySecret = process.env.RAZORPAY_KEY_SECRET;
 
-if (!keyId || !keySecret) {
-  throw new Error(
-    "Razorpay credentials are missing. Check server/.env"
-  );
-}
+let razorpay = null;
 
-const razorpay = new Razorpay({
-  key_id: keyId,
-  key_secret: keySecret,
-});
+if (keyId && keySecret) {
+  razorpay = new Razorpay({
+    key_id: keyId,
+    key_secret: keySecret,
+  });
+}
 
 export default razorpay;

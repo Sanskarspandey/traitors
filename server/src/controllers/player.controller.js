@@ -23,10 +23,10 @@ export const createPlayer = async (req, res) => {
       });
     }
 
-    // Check current entry request count
-    const playerCount = await Player.countDocuments();
+    // Check current active entry request count (excluding rejected)
+    const activeCount = await Player.countDocuments({ status: { $ne: "rejected" } });
 
-    if (playerCount >= MAX_PLAYERS) {
+    if (activeCount >= MAX_PLAYERS) {
       return res.status(409).json({
         success: false,
         message: "The Estate registration is currently at maximum capacity.",
@@ -71,13 +71,25 @@ export const createPlayer = async (req, res) => {
 // GET PLAYER COUNT
 export const getPlayerCount = async (req, res) => {
   try {
-    const count = await Player.countDocuments();
+    const totalCount = await Player.countDocuments();
+    const confirmedCount = await Player.countDocuments({ status: "confirmed" });
+    const pendingCount = await Player.countDocuments({ status: "pending" });
+    const contactedCount = await Player.countDocuments({ status: "contacted" });
+    const rejectedCount = await Player.countDocuments({ status: "rejected" });
 
     return res.status(200).json({
       success: true,
-      totalPlayers: count,
-      seatsRemaining: Math.max(MAX_PLAYERS - count, 0),
+      totalPlayers: totalCount,
+      confirmedPlayers: confirmedCount,
+      seatsRemaining: Math.max(MAX_PLAYERS - confirmedCount, 0),
       maxPlayers: MAX_PLAYERS,
+      counts: {
+        total: totalCount,
+        pending: pendingCount,
+        contacted: contactedCount,
+        confirmed: confirmedCount,
+        rejected: rejectedCount,
+      },
     });
   } catch (error) {
     console.error("Player count error:", error);
@@ -129,7 +141,7 @@ export const updatePlayerStatus = async (req, res) => {
     const player = await Player.findByIdAndUpdate(
       id,
       { status },
-      { new: true }
+      { returnDocument: "after" }
     );
 
     if (!player) {

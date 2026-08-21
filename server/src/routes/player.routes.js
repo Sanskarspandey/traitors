@@ -7,17 +7,20 @@ import {
   updatePlayerStatus,
   deletePlayer,
 } from "../controllers/player.controller.js";
+import { adminAuth } from "../middleware/adminAuth.js";
 
 const router = express.Router();
 
+// PUBLIC: User registration
 router.post("/", createPlayer);
 
-router.get("/count", getPlayerCount);
+// ADMIN ONLY: Protected with JWT adminAuth
+router.get("/count", adminAuth, getPlayerCount);
 
-router.get("/", getAllPlayers);
+router.get("/", adminAuth, getAllPlayers);
 
-router.patch("/:id/status", updatePlayerStatus);
+router.patch("/:id/status", adminAuth, updatePlayerStatus);
 
-router.delete("/:id", deletePlayer);
+router.delete("/:id", adminAuth, deletePlayer);
 
 export default router;

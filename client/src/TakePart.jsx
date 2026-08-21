@@ -64,7 +64,7 @@ function TakePart() {
 
     const apiEndpoint = import.meta.env.VITE_API_URL
       ? `${import.meta.env.VITE_API_URL}/api/players`
-      : "http://localhost:5055/api/players";
+      : "http://localhost:5050/api/players";
 
     try {
       const response = await fetch(apiEndpoint, {
@@ -79,21 +79,16 @@ function TakePart() {
         }),
       });
 
+      const data = await response.json().catch(() => ({}));
+
       if (response.ok) {
         setIsSubmitted(true);
       } else {
-        const data = await response.json().catch(() => ({}));
-        // If seat limit or duplicate phone
-        if (data.message) {
-          alert(data.message);
-        } else {
-          setIsSubmitted(true);
-        }
+        alert(data.message || "Something went wrong while submitting your entry request.");
       }
     } catch (error) {
-      console.warn("Server unavailable, recording entry locally:", error);
-      // Ensure smooth user experience even if backend server is not running
-      setIsSubmitted(true);
+      console.error("Submission error:", error);
+      alert("Unable to connect to the server. Please check your connection and try again.");
     } finally {
       setIsSubmitting(false);
     }

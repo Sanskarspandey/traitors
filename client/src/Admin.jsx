@@ -1,18 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import "./Admin.css";
 
-const API_BASE = import.meta.env.VITE_API_URL
-  ? `${import.meta.env.VITE_API_URL}/api/players`
-  : "http://localhost:5055/api/players";
-const ADMIN_PASSCODE = "estate2025";
+const API_ROOT = import.meta.env.VITE_API_URL || "http://localhost:5050";
+const API_BASE = `${API_ROOT}/api/players`;
+const AUTH_URL = `${API_ROOT}/api/auth/login`;
 
 function Admin() {
-  const [isAuthenticated, setIsAuthenticated] = useState(() => {
-    return sessionStorage.getItem("estate_admin_auth") === "true";
+  const [token, setToken] = useState(() => {
+    return localStorage.getItem("estate_admin_token") || null;
   });
-  const [passcode, setPasscode] = useState("");
-  const [passcodeError, setPasscodeError] = useState("");
+
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [authError, setAuthError] = useState("");
+  const [isLoggingIn, setIsLoggingIn] = useState(false);
 
   const [players, setPlayers] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -20,55 +22,114 @@ function Admin() {
   const [searchQuery, setSearchQuery] = useState("");
   const [statusFilter, setStatusFilter] = useState("all");
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    if (passcode === ADMIN_PASSCODE) {
-      sessionStorage.setItem("estate_admin_auth", "true");
-      setIsAuthenticated(true);
-      setPasscodeError("");
-    } else {
-      setPasscodeError("Incorrect passcode. Access denied.");
-    }
-  };
+  const handleLogout = useCallback(() => {
+    localStorage.removeItem("estate_admin_token");
+    setToken(null);
+    setPlayers([]);
+    setPassword("");
+  }, []);
 
-  const fetchPlayers = async () => {
-    setLoading(true);
-    setError(null);
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    if (!username.trim() || !password) {
+      setAuthError("Please enter both username and password.");
+      return;
+    }
+
+    setIsLoggingIn(true);
+    setAuthError("");
+
     try {
-      const res = await fetch(API_BASE);
+      const res = await fetch(AUTH_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username: username.trim(), password }),
+      });
+
       const data = await res.json();
-      if (res.ok && data.success) {
-        setPlayers(data.players || []);
+
+      if (res.ok && data.success && data.token) {
+        localStorage.setItem("estate_admin_token", data.token);
+        setToken(data.token);
+        setAuthError("");
       } else {
-        setError(data.message || "Failed to load players");
+        setAuthError(data.message || "Invalid admin credentials.");
       }
     } catch (err) {
       console.error(err);
-      setError("Unable to connect to backend server (http://localhost:5050). Ensure server is running.");
+      setAuthError("Unable to connect to the backend server. Please verify the server is running.");
     } finally {
-      setLoading(false);
+      setIsLoggingIn(false);
     }
   };
 
+  const fetchPlayers = useCallback(async () => {
+    if (!token) return;
+
+    setLoading(true);
+    setError(null);
+
+    try {
+      const res = await fetch(API_BASE, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      const data = await res.json();
+
+      if (res.status === 401 || res.status === 403) {
+        handleLogout();
+        setAuthError(data.message || "Session expired. Please log in again.");
+        return;
+      }
+
+      if (res.ok && data.success) {
+        setPlayers(data.players || []);
+      } else {
+        setError(data.message || "Failed to load players.");
+      }
+    } catch (err) {
+      console.error(err);
+      setError("Unable to load entry requests. Check your network or backend server connection.");
+    } finally {
+      setLoading(false);
+    }
+  }, [token, handleLogout]);
+
   useEffect(() => {
-    if (isAuthenticated) {
+    if (token) {
       fetchPlayers();
     }
-  }, [isAuthenticated]);
+  }, [token, fetchPlayers]);
 
   const handleStatusChange = async (id, newStatus) => {
+    if (!token) return;
+
     try {
       const res = await fetch(`${API_BASE}/${id}/status`, {
         method: "PATCH",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
         body: JSON.stringify({ status: newStatus }),
       });
-      if (res.ok) {
+
+      const data = await res.json();
+
+      if (res.status === 401) {
+        handleLogout();
+        setAuthError("Session expired. Please log in again.");
+        return;
+      }
+
+      if (res.ok && data.success) {
         setPlayers((prev) =>
           prev.map((p) => (p._id === id ? { ...p, status: newStatus } : p))
         );
       } else {
-        alert("Failed to update status.");
+        alert(data.message || "Failed to update status.");
       }
     } catch (err) {
       console.error(err);
@@ -77,17 +138,31 @@ function Admin() {
   };
 
   const handleDelete = async (id, name) => {
+    if (!token) return;
     if (!window.confirm(`Are you sure you want to delete the entry for ${name}?`)) {
       return;
     }
+
     try {
       const res = await fetch(`${API_BASE}/${id}`, {
         method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       });
-      if (res.ok) {
+
+      const data = await res.json();
+
+      if (res.status === 401) {
+        handleLogout();
+        setAuthError("Session expired. Please log in again.");
+        return;
+      }
+
+      if (res.ok && data.success) {
         setPlayers((prev) => prev.filter((p) => p._id !== id));
       } else {
-        alert("Failed to delete entry.");
+        alert(data.message || "Failed to delete entry.");
       }
     } catch (err) {
       console.error(err);
@@ -110,11 +185,16 @@ function Admin() {
       `"${new Date(p.createdAt).toLocaleString("en-IN")}"`,
     ]);
 
-    const csvContent = "data:text/csv;charset=utf-8," + [headers.join(","), ...rows.map((r) => r.join(","))].join("\n");
+    const csvContent =
+      "data:text/csv;charset=utf-8," +
+      [headers.join(","), ...rows.map((r) => r.join(","))].join("\n");
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement("a");
     link.setAttribute("href", encodedUri);
-    link.setAttribute("download", `the_estate_entries_${new Date().toISOString().slice(0, 10)}.csv`);
+    link.setAttribute(
+      "download",
+      `the_estate_entries_${new Date().toISOString().slice(0, 10)}.csv`
+    );
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -126,7 +206,8 @@ function Admin() {
       p.phone.includes(searchQuery) ||
       (p.bookingId && p.bookingId.toLowerCase().includes(searchQuery.toLowerCase()));
 
-    const matchesStatus = statusFilter === "all" || (p.status || "pending") === statusFilter;
+    const matchesStatus =
+      statusFilter === "all" || (p.status || "pending") === statusFilter;
     return matchesSearch && matchesStatus;
   });
 
@@ -134,7 +215,7 @@ function Admin() {
   const countContacted = players.filter((p) => p.status === "contacted").length;
   const countConfirmed = players.filter((p) => p.status === "confirmed").length;
 
-  if (!isAuthenticated) {
+  if (!token) {
     return (
       <div className="admin-page">
         <div className="admin-auth-card">
@@ -144,19 +225,35 @@ function Admin() {
           <div className="gold-line center-line" />
 
           <form onSubmit={handleLogin} className="admin-auth-form">
-            <label htmlFor="passcode">ENTER ACCESS PASSCODE</label>
+            <label htmlFor="username">ADMIN USERNAME</label>
             <input
-              id="passcode"
-              type="password"
-              value={passcode}
-              onChange={(e) => setPasscode(e.target.value)}
-              placeholder="Passcode (default: estate2025)"
+              id="username"
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              placeholder="Username"
               autoFocus
+              autoComplete="username"
             />
-            {passcodeError && <small className="auth-err">{passcodeError}</small>}
 
-            <button type="submit" className="admin-gold-btn">
-              ENTER DASHBOARD →
+            <label htmlFor="password">ADMIN PASSWORD</label>
+            <input
+              id="password"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
+              autoComplete="current-password"
+            />
+
+            {authError && <small className="auth-err">{authError}</small>}
+
+            <button
+              type="submit"
+              className="admin-gold-btn"
+              disabled={isLoggingIn}
+            >
+              {isLoggingIn ? "AUTHENTICATING..." : "ENTER DASHBOARD →"}
             </button>
           </form>
 
@@ -190,13 +287,7 @@ function Admin() {
             <button onClick={fetchPlayers} className="admin-action-btn" disabled={loading}>
               🔄 {loading ? "REFRESHING..." : "REFRESH"}
             </button>
-            <button
-              onClick={() => {
-                sessionStorage.removeItem("estate_admin_auth");
-                setIsAuthenticated(false);
-              }}
-              className="admin-logout-btn"
-            >
+            <button onClick={handleLogout} className="admin-logout-btn">
               LOGOUT
             </button>
           </div>

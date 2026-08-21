@@ -42,14 +42,18 @@ export const createPaymentOrder = async (req, res) => {
     // Prevent paying twice
 
     if (player.paymentStatus === "paid") {
-
       return res.status(400).json({
         success: false,
         message: "This player has already paid.",
       });
-
     }
 
+    if (!razorpay) {
+      return res.status(503).json({
+        success: false,
+        message: "Online payments are currently disabled. Registration is handled manually.",
+      });
+    }
 
     // ₹6,000
     // Razorpay expects amount in paise

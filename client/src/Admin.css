@@ -60,11 +60,17 @@
 .admin-auth-form label {
   display: block;
   color: #b89b5e;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 1.5px;
-  margin-bottom: 12px;
+  margin-top: 15px;
+  margin-bottom: 8px;
   text-align: left;
+  font-family: "Cinzel", Georgia, serif;
+}
+
+.admin-auth-form label:first-of-type {
+  margin-top: 0;
 }
 
 .admin-auth-form input {
