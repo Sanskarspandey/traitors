@@ -19,26 +19,34 @@ const MONGO_URI = process.env.MONGO_URI;
 // CORS CONFIGURATION
 // ==============================
 
-const defaultAllowedOrigins = [
+const defaultDevOrigins = [
   "http://localhost:5173",
   "http://localhost:5174",
   "http://localhost:5175",
   "http://localhost:3000",
+  "http://127.0.0.1:5173",
+  "http://127.0.0.1:5174",
+  "http://127.0.0.1:5175",
 ];
 
 const configuredOrigins = process.env.CLIENT_URL
-  ? process.env.CLIENT_URL.split(",").map((url) => url.trim().replace(/\/$/, ""))
+  ? process.env.CLIENT_URL.split(",").map((url) => url.trim().replace(/\/+$/, ""))
   : [];
 
-const allowedOrigins = [...defaultAllowedOrigins, ...configuredOrigins];
+const isProduction = process.env.NODE_ENV === "production";
+
+// In production, strictly restrict to configured CLIENT_URL. In development, allow localhost ports.
+const allowedOrigins = isProduction
+  ? configuredOrigins
+  : [...defaultDevOrigins, ...configuredOrigins];
 
 app.use(
   cors({
     origin: (origin, callback) => {
-      // Allow requests with no origin (like mobile apps, curl, or server-to-server)
+      // Allow requests with no origin (like mobile apps, curl, server-to-server)
       if (!origin) return callback(null, true);
 
-      if (allowedOrigins.includes(origin) || allowedOrigins.includes("*")) {
+      if (allowedOrigins.includes(origin)) {
         return callback(null, true);
       }
 
