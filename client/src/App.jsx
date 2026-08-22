@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./App.css";
 
-const IMG = "/images";
+const IMG = `${import.meta.env.BASE_URL || "/"}images`.replace(/\/\/+/g, "/");
 const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf0W9L1Jrk8_gJhqriE0zBwZ5xYP7SZFm1BtojvByX9gTB5rg/viewform";
 
 function App() {
