@@ -1,109 +1,9 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./TakePart.css";
 
+const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf0W9L1Jrk8_gJhqriE0zBwZ5xYP7SZFm1BtojvByX9gTB5rg/viewform";
+
 function TakePart() {
-  const [form, setForm] = useState({
-    fullName: "",
-    age: "",
-    phone: "",
-  });
-
-  const [errors, setErrors] = useState({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-
-    setForm((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-
-    setErrors((prev) => ({
-      ...prev,
-      [name]: "",
-    }));
-  };
-
-  const validate = () => {
-    const newErrors = {};
-
-    if (!form.fullName.trim()) {
-      newErrors.fullName = "Please enter your full name.";
-    } else if (form.fullName.trim().length < 2) {
-      newErrors.fullName = "Please enter a valid name.";
-    }
-
-    const ageNum = parseInt(form.age, 10);
-    if (!form.age) {
-      newErrors.age = "Please enter your age.";
-    } else if (isNaN(ageNum) || ageNum < 18 || ageNum > 99) {
-      newErrors.age = "Participants must be at least 18 years old.";
-    }
-
-    const cleanPhone = form.phone.replace(/[\s\-\(\)\+]/g, "");
-    const isValidPhone = /^(?:91|0)?[6-9]\d{9}$/.test(cleanPhone);
-
-    if (!form.phone.trim()) {
-      newErrors.phone = "Please enter your mobile number.";
-    } else if (!isValidPhone) {
-      newErrors.phone = "Please enter a valid 10-digit Indian mobile number.";
-    }
-
-    setErrors(newErrors);
-
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    if (!validate()) return;
-
-    setIsSubmitting(true);
-
-    const apiRoot = (import.meta.env.VITE_API_URL || "http://localhost:5050").replace(/\/+$/, "");
-    const apiEndpoint = `${apiRoot}/api/players`;
-
-    try {
-      const response = await fetch(apiEndpoint, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          fullName: form.fullName.trim(),
-          age: parseInt(form.age, 10),
-          phone: form.phone.trim(),
-        }),
-      });
-
-      const data = await response.json().catch(() => ({}));
-
-      if (response.ok) {
-        setIsSubmitted(true);
-      } else {
-        console.error("Registration request rejected:", {
-          url: apiEndpoint,
-          status: response.status,
-          statusText: response.statusText,
-          body: data,
-        });
-        alert(data.message || "Something went wrong while submitting your entry request.");
-      }
-    } catch (error) {
-      console.error("Failed to connect to backend server:", {
-        url: apiEndpoint,
-        error: error.message || error,
-      });
-      alert("Unable to connect to the server. Please check your connection and try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return (
     <div className="take-page">
       {/* BACKGROUND */}
@@ -135,115 +35,76 @@ function TakePart() {
           </p>
         </div>
 
-        {/* REGISTRATION */}
+        {/* REGISTRATION LAYOUT */}
         <div className="registration-layout">
-          {/* =================================
-              FORM / SUCCESS STATE
-              ================================= */}
-          {isSubmitted ? (
-            <div className="success-card">
-              <div className="success-crest">♛</div>
-
-              <div className="success-tag">THE ESTATE — 20 PLAYERS ONLY</div>
-
-              <h2 className="success-title">REQUEST RECEIVED</h2>
-
-              <div className="gold-line center-gold-line" />
-
-              <p className="success-main-msg">
-                Your request has been received.
-              </p>
-
-              <p className="success-sub-msg">
-                We'll contact you shortly with the next steps.
-              </p>
-
-              <div className="success-note">
-                Our team reviews all entries to curate a balanced group of 20
-                participants. Selected players will receive private confirmation
-                and payment instructions.
+          {/* APPLICATION CARD */}
+          <div className="player-form">
+            <div className="form-heading">
+              <span>01</span>
+              <div>
+                <h2>OFFICIAL ENTRY APPLICATION</h2>
+                <p>
+                  Applications for The Traitors Mumbai are officially processed through our verified Google Form with game archetype screening and payment screenshot verification.
+                </p>
               </div>
-
-              <Link to="/" className="gold-button success-return-btn">
-                RETURN TO THE ESTATE
-              </Link>
             </div>
-          ) : (
-            <form className="player-form" onSubmit={handleSubmit}>
-              {/* PLAYER DETAILS */}
-              <div className="form-heading">
-                <span>01</span>
-                <div>
-                  <h2>REQUEST YOUR INVITATION</h2>
-                  <p>
-                    Submit your details. The Estate takes less than 30 seconds to
-                    request.
-                  </p>
+
+            <div className="field" style={{ borderTop: "1px solid rgba(184, 155, 94, 0.2)", paddingTop: "24px" }}>
+              <label style={{ color: "#c5a45f", letterSpacing: "2px", fontSize: "12px", fontFamily: "Cinzel, Georgia, serif" }}>
+                APPLICATION STEPS
+              </label>
+              
+              <div style={{ display: "flex", flexDirection: "column", gap: "16px", marginTop: "14px" }}>
+                <div style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
+                  <span style={{ color: "#c5a45f", fontSize: "16px", fontWeight: "bold" }}>①</span>
+                  <div style={{ color: "rgba(241, 234, 220, 0.85)", fontSize: "15px", lineHeight: "1.5" }}>
+                    <strong style={{ color: "#fff", display: "block" }}>Player Details & Role Archetype</strong>
+                    Select your play style: The Traitor, The Detective, The Diplomat, or The Wildcard.
+                  </div>
+                </div>
+
+                <div style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
+                  <span style={{ color: "#c5a45f", fontSize: "16px", fontWeight: "bold" }}>②</span>
+                  <div style={{ color: "rgba(241, 234, 220, 0.85)", fontSize: "15px", lineHeight: "1.5" }}>
+                    <strong style={{ color: "#fff", display: "block" }}>Pass & Screenshot Verification</strong>
+                    ₹6,000 / Person (All-inclusive 2-day private estate stay, gourmet meals, and full game). Upload your transaction receipt directly in the form.
+                  </div>
+                </div>
+
+                <div style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
+                  <span style={{ color: "#c5a45f", fontSize: "16px", fontWeight: "bold" }}>③</span>
+                  <div style={{ color: "rgba(241, 234, 220, 0.85)", fontSize: "15px", lineHeight: "1.5" }}>
+                    <strong style={{ color: "#fff", display: "block" }}>Handpicked Confirmation</strong>
+                    Our team reviews all submissions to curate the final 20 participants. Selected players will receive private WhatsApp confirmation.
+                  </div>
                 </div>
               </div>
+            </div>
 
-              {/* NAME */}
-              <div className="field">
-                <label htmlFor="fullName">FULL NAME</label>
-                <input
-                  id="fullName"
-                  type="text"
-                  name="fullName"
-                  value={form.fullName}
-                  onChange={handleChange}
-                  placeholder="Enter your full name"
-                  autoComplete="name"
-                />
-                {errors.fullName && <small>{errors.fullName}</small>}
-              </div>
+            {/* CTA BUTTON */}
+            <a
+              href={GOOGLE_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="payment-button request-entry-btn"
+              style={{
+                textDecoration: "none",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                marginTop: "35px",
+                boxSizing: "border-box"
+              }}
+            >
+              <span>FILL GOOGLE APPLICATION FORM</span>
+              <span>→</span>
+            </a>
 
-              {/* AGE */}
-              <div className="field">
-                <label htmlFor="age">AGE</label>
-                <input
-                  id="age"
-                  type="number"
-                  name="age"
-                  value={form.age}
-                  onChange={handleChange}
-                  placeholder="e.g. 24"
-                  min="18"
-                  max="99"
-                />
-                {errors.age && <small>{errors.age}</small>}
-              </div>
-
-              {/* PHONE */}
-              <div className="field">
-                <label htmlFor="phone">PHONE NUMBER</label>
-                <input
-                  id="phone"
-                  type="tel"
-                  name="phone"
-                  value={form.phone}
-                  onChange={handleChange}
-                  placeholder="+91 98765 43210"
-                  autoComplete="tel"
-                />
-                {errors.phone && <small>{errors.phone}</small>}
-              </div>
-
-              {/* CONSENT */}
-              <p className="consent-text">
-                By submitting, you agree to be contacted regarding The Estate.
-              </p>
-
-              {/* SUBMIT BUTTON */}
-              <button
-                type="submit"
-                className="payment-button request-entry-btn"
-                disabled={isSubmitting}
-              >
-                <span>{isSubmitting ? "SUBMITTING..." : "REQUEST ENTRY"}</span>
-                <span>→</span>
-              </button>
-            </form>
-          )}
+            {/* DIRECT CONTACT */}
+            <p className="consent-text" style={{ marginTop: "24px" }}>
+              Questions or direct booking queries? WhatsApp us at <strong style={{ color: "#c5a45f" }}>+91 9372948245</strong> or DM <strong style={{ color: "#c5a45f" }}>@the_estate__</strong>
+            </p>
+          </div>
 
           {/* =================================
               PRICE PANEL

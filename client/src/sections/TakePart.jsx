@@ -37,9 +37,15 @@ function TakePart() {
           <span>PER PLAYER</span>
         </div>
 
-        <button className="final-button">
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSf0W9L1Jrk8_gJhqriE0zBwZ5xYP7SZFm1BtojvByX9gTB5rg/viewform"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="final-button"
+          style={{ display: "inline-block", textAlign: "center", textDecoration: "none" }}
+        >
           TAKE PART — ₹6,000
-        </button>
+        </a>
 
         <p className="spots-left">
           20 PLAYERS ONLY · MUMBAI · OCTOBER 2026

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./App.css";
 
 const IMG = "/images";
+const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf0W9L1Jrk8_gJhqriE0zBwZ5xYP7SZFm1BtojvByX9gTB5rg/viewform";
 
 function App() {
   const scrollToSection = (id) => {
@@ -73,12 +74,14 @@ function App() {
         </nav>
 
 
-        <Link
-          to="/take-part"
+        <a
+          href={GOOGLE_FORM_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="nav-take-part"
         >
           REQUEST ENTRY
-        </Link>
+        </a>
 
       </header>
 
@@ -150,12 +153,14 @@ function App() {
 
           </div>
 
-          <Link
-            to="/take-part"
+          <a
+            href={GOOGLE_FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="gold-button hero-button"
           >
             REQUEST ENTRY
-          </Link>
+          </a>
 
           <div className="hero-limited">
             LIMITED TO 20 PLAYERS ONLY · 24-25 OCTOBER, 2026
@@ -594,12 +599,14 @@ function App() {
 
             <div className="entry-middle">
 
-              <Link
-                to="/take-part"
+              <a
+                href={GOOGLE_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="gold-button"
               >
                 REQUEST ENTRY
-              </Link>
+              </a>
 
               <span>
                 LIMITED TO 20 PLAYERS · 24-25 OCTOBER, 2026
