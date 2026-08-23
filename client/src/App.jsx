@@ -85,7 +85,7 @@ function App() {
               THE RULES
             </button>
             <button type="button" onClick={() => scrollToSection("stay")}>
-              THE STAY
+              WHAT'S INCLUDED
             </button>
             <button type="button" onClick={() => scrollToSection("faq")}>
               FAQ
@@ -170,7 +170,7 @@ function App() {
               </button>
               <button type="button" onClick={() => scrollToSection("stay")}>
                 <span className="nav-num">VI.</span>
-                <span className="nav-title">THE STAY</span>
+                <span className="nav-title">WHAT'S INCLUDED</span>
               </button>
               <button type="button" onClick={() => scrollToSection("faq")}>
                 <span className="nav-num">VII.</span>
@@ -232,7 +232,7 @@ function App() {
 
         <div className="hero-content">
           <div className="hero-eyebrow">
-            20 PLAYERS · 1 MANSION · 24-25 OCTOBER, 2026
+            20 STRANGERS · 2-DAY ESCAPE · SECRET DESTINATION
           </div>
 
           <h1 className="hero-title">
@@ -244,20 +244,20 @@ function App() {
           <p className="hero-subtitle">
             TRUST IS RARE, DHOKHA EVERYWHERE.
             <br />
-            THE ESTATE IS CALLING. WILL YOU ANSWER?
+            AN IMMERSIVE 2-DAY ESCAPE TO THE HILLS.
           </p>
 
           <div className="hero-details">
             <span className="hero-detail-item">
               <span className="detail-icon">▣</span>
-              24-25 OCTOBER, 2026
+              TRIP: SEPT 26–27 · DEP: SEPT 25, 11 PM
             </span>
 
             <span className="detail-divider"></span>
 
             <span className="hero-detail-item">
               <span className="detail-icon">◆</span>
-              A PRIVATE MANSION
+              SECRET HILLS DESTINATION
             </span>
 
             <span className="detail-divider"></span>
@@ -275,12 +275,12 @@ function App() {
               rel="noopener noreferrer"
               className="gold-button hero-button"
             >
-              REQUEST ENTRY
+              READY TO PLAY?
             </a>
           </div>
 
           <div className="hero-limited">
-            LIMITED TO 20 PLAYERS ONLY · 24-25 OCTOBER, 2026
+            LIMITED TO 20 PLAYERS ONLY · DEPARTURE: SEPTEMBER 25TH 11 PM
           </div>
         </div>
       </section>
@@ -317,19 +317,19 @@ function App() {
           <div className="gold-line"></div>
 
           <p>
-            The Traitors Mumbai is an exclusive real-life psychological game
+            We’re taking <strong>20 strangers</strong> on a 2-day escape to the hills but there’s a catch.
             <br />
-            of trust, strategy, alliances and deception.
+            You won’t know where you’re going until it’s time to go.
           </p>
 
           <p>
-            20 handpicked players enter a private estate. Some are loyal. Some are traitors.
+            Don’t worry — this isn’t a sketchy mystery trip. You’re in safe hands with the hosts.
             <br />
-            Your mission is simple: uncover the truth and survive.
+            The location is secret because we want the whole weekend to feel like stepping into a real life game.
           </p>
 
           <p className="strong-line">
-            Trust no one.
+            Think: games, challenges, surprises, secrets and a little bit of chaos.
           </p>
         </div>
 
@@ -376,8 +376,8 @@ function App() {
           <div className="steps">
             <Step
               icon="♟"
-              title="20 PLAYERS"
-              text="20 handpicked players enter the private estate."
+              title="20 STRANGERS"
+              text="20 strangers depart together for the secret hills."
             />
 
             <div className="step-arrow">
@@ -463,26 +463,26 @@ function App() {
           <div className="experience-list">
             <ExperienceItem
               icon="♜"
-              title="A LUXURIOUS PRIVATE MANSION"
-              text="An exclusive private estate serving as your home and battleground for 2 thrilling days."
+              title="COME ALONE — DON'T BRING YOUR FRIENDS"
+              text="You don’t need to convince your friends to come. In fact, we’d rather you didn’t. The whole point is to arrive knowing nobody and leave with a whole new group."
             />
 
             <ExperienceItem
               icon="♨"
-              title="FOOD & ACCOMMODATION INCLUDED"
-              text="Full 2-day stay with breakfast, dinner, and comfortable private lodging."
+              title="TWO DAYS. NO ROUTINE."
+              text="For two days, forget your usual plans, step away from your routine and let us take care of the rest."
             />
 
             <ExperienceItem
               icon="♟"
-              title="IMMERSIVE GAMEPLAY & MISSIONS"
-              text="Secret roles, psychological twists, strategic alliances, and mystery challenges."
+              title="GAMES, CHALLENGES & CHAOS"
+              text="Think: games, challenges, surprises, secrets and a little bit of chaos where trust is rare."
             />
 
             <ExperienceItem
               icon="♠"
-              title="CINEMATIC ATMOSPHERE"
-              text="Every candle, mask, and room designed to deliver an unforgettable luxury experience."
+              title="SECLUDED PROPERTY & NATURE"
+              text="Stay at a beautiful property amidst nature with a swimming pool, gourmet meals, and an immersive game atmosphere."
             />
           </div>
         </div>
@@ -515,7 +515,7 @@ function App() {
             </div>
 
             <h2>
-              THE RULES
+              THE RULES ARE SIMPLE:
             </h2>
 
             <div className="gold-line center"></div>
@@ -524,32 +524,32 @@ function App() {
           <div className="rules-grid">
             <Rule
               icon="◈"
-              title="DON'T REVEAL YOUR ROLE"
-              text="Your secret identity is your greatest shield."
+              title="COME ALONE."
+              text="Leave your usual circle behind. Arrive as a stranger to truly dive in."
             />
 
             <Rule
               icon="◉"
-              title="LISTEN CAREFULLY"
-              text="Subtle clues and quiet lies are hidden everywhere."
+              title="TRUST THE HOSTS."
+              text="You’re in safe hands with the hosts every step of the journey."
             />
 
             <Rule
               icon="◉"
-              title="TRUST WISELY"
-              text="Alliances can protect you or seal your downfall."
+              title="PLAY YOUR PART."
+              text="Commit to your role, complete challenges, and embrace the mystery."
             />
 
             <Rule
               icon="♟"
-              title="COMPLETE MISSIONS"
-              text="Cooperate in team challenges, but stay alert."
+              title="BE PREPARED FOR TWISTS."
+              text="Expect surprises, hidden clues, and secrets behind closed doors."
             />
 
             <Rule
               icon="♠"
-              title="BETRAY OR BE BETRAYED"
-              text="In The Estate, survival demands strategy."
+              title="DON'T ASSUME THE TRUTH."
+              text="Don’t assume everyone is telling the truth. Dhokha is everywhere."
             />
           </div>
         </div>
@@ -557,7 +557,7 @@ function App() {
 
 
       {/* =====================================================
-          6. THE STAY / WHAT'S INCLUDED
+          6. WHAT'S INCLUDED
       ===================================================== */}
 
       <section
@@ -581,7 +581,7 @@ function App() {
           </div>
 
           <h2>
-            THE STAY & DETAILS
+            WHAT'S INCLUDED
           </h2>
 
           <div className="gold-line center"></div>
@@ -592,32 +592,38 @@ function App() {
           </div>
 
           <p className="stay-summary-text">
-            20 PLAYERS · 2 FULL DAYS (24-25 OCTOBER, 2026) · 1 PRIVATE MANSION
+            TRIP DURATION: SEPTEMBER 26–27, 2026 · DEPARTURE: SEPTEMBER 25TH 11 PM
           </p>
 
           <div className="stay-inclusions-grid">
             <div className="stay-inclusion-card">
               <span className="inclusion-icon">🏰</span>
-              <h3>2-Day Private Estate Stay</h3>
-              <p>Exclusive access to a luxury private mansion & grounds nestled in nature</p>
+              <h3>Stay at a beautiful property amidst nature</h3>
+              <p>Exclusive private property nestled in the hills with serene natural surroundings</p>
+            </div>
+
+            <div className="stay-inclusion-card">
+              <span className="inclusion-icon">🏊</span>
+              <h3>Swimming Pool</h3>
+              <p>Poolside relaxation and refreshing leisure between challenges</p>
             </div>
 
             <div className="stay-inclusion-card">
               <span className="inclusion-icon">🍷</span>
-              <h3>Food & Dining</h3>
-              <p>Curated breakfast & dinner included across both days</p>
+              <h3>Breakfast & Dinner</h3>
+              <p>Curated meals and dining provided across both days</p>
             </div>
 
             <div className="stay-inclusion-card">
               <span className="inclusion-icon">🎭</span>
-              <h3>The Immersive Game</h3>
-              <p>Full psychological game, customized missions & unexpected twists</p>
+              <h3>Games, challenges & unexpected twists</h3>
+              <p>Full immersive game storyline, secret missions & props</p>
             </div>
 
-            <div className="stay-inclusion-card">
-              <span className="inclusion-icon">⚔️</span>
-              <h3>All Game Materials</h3>
-              <p>Shields, masks, clues, strategy kits & themed activities</p>
+            <div className="stay-inclusion-card" style={{ gridColumn: "span 4" }}>
+              <span className="inclusion-icon">👥</span>
+              <h3>20 strangers who might not be strangers by the end</h3>
+              <p>A handpicked group of adventurous individuals sharing an unforgettable escape</p>
             </div>
           </div>
         </div>
@@ -649,7 +655,7 @@ function App() {
           </div>
 
           <h2>
-            REQUEST ENTRY
+            READY TO PLAY?
           </h2>
 
           <div className="gold-line center"></div>
@@ -663,7 +669,7 @@ function App() {
                 ₹6,000
               </span>
               <span className="entry-note">
-                PER PERSON · STAY & GAME
+                PER PERSON · STAY, MEALS & GAME
               </span>
             </div>
 
@@ -678,7 +684,7 @@ function App() {
               </a>
 
               <span>
-                LIMITED TO 20 PLAYERS · 24-25 OCTOBER, 2026
+                20 STRANGERS · SEPT 26–27 · DEP: SEPT 25, 11 PM
               </span>
             </div>
 
@@ -690,7 +696,7 @@ function App() {
                 20
               </span>
               <span className="entry-note">
-                PLAYERS ONLY
+                STRANGERS ONLY
               </span>
             </div>
           </div>
@@ -732,48 +738,43 @@ function App() {
 
           <div className="faq-grid">
             <FAQ
-              question="What is The Estate?"
-              answer="The Estate is a premium 2-day immersive psychological social-deduction game experience for 20 players set inside a private luxury mansion."
+              question="What is The Traitors Mumbai?"
+              answer="We’re taking 20 strangers on a 2-day escape to the hills for an immersive weekend of games, challenges, surprises, secrets, and a little bit of chaos."
             />
 
             <FAQ
-              question="Who can participate?"
-              answer="Anyone aged 18 and above who enjoys strategy, mystery, deception games, and meeting new people. No prior experience is required."
+              question="Why is the location secret?"
+              answer="You won’t know where you’re going until it’s time to go. The location is secret because we want the whole weekend to feel like stepping into a real-life game. The property is a beautiful, safe property amidst nature in the hills."
             />
 
             <FAQ
-              question="How many players are there?"
-              answer="Each edition is strictly limited to 20 handpicked players to ensure deep immersion and high-stakes social dynamics."
+              question="Is it safe if I'm coming alone?"
+              answer="100% safe. You are in safe hands with the hosts. In fact, coming alone is the core rule: you arrive knowing nobody and leave with a whole new group."
             />
 
             <FAQ
-              question="What does the ₹6,000 entry include?"
-              answer="The ₹6,000 fee includes your full 2-day stay at the private estate, accommodation, breakfast and dinner, all immersive game activities, missions, and props."
+              question="When is the trip taking place?"
+              answer="Trip duration: September 26–27, 2026. Departure: September 25th at 11:00 PM."
             />
 
             <FAQ
-              question="When and how long is the experience?"
-              answer="The experience takes place on 24-25 October, 2026 (2 full days and 1 night of non-stop immersion, mystery, and strategy)."
+              question="What does the ₹6,000 pass include?"
+              answer="It includes your stay at a beautiful property amidst nature, swimming pool, breakfast & dinner across both days, and all games, challenges, and unexpected twists."
             />
 
             <FAQ
-              question="Where will it take place?"
-              answer="At an exclusive private mansion near Mumbai. The exact location details are shared directly with confirmed participants."
+              question="Can I bring my friends?"
+              answer="You don’t need to convince your friends to come — in fact, we’d rather you didn’t! The whole point is to arrive knowing nobody and leave with a whole new group."
             />
 
             <FAQ
-              question="Is accommodation included?"
-              answer="Yes, comfortable private lodging inside the estate for the entire duration of the experience is fully included."
+              question="How are the 20 players chosen?"
+              answer="Interested participants submit their application through our form. Our hosts review entries to ensure a balanced, fun, and safe group of 20 players."
             />
 
             <FAQ
-              question="What happens after I request entry?"
-              answer="Our team reviews all entry requests and reaches out directly to selected participants regarding confirmation and next steps."
-            />
-
-            <FAQ
-              question="Is the entry automatically confirmed?"
-              answer="No. Requesting entry registers your interest. Because seats are strictly capped at 20, entries are reviewed and confirmed manually."
+              question="What happens after I apply?"
+              answer="Our team reviews all entries. Selected participants will be contacted directly via WhatsApp/Call with confirmation, travel coordinates, and next steps."
             />
           </div>
         </div>
@@ -790,7 +791,7 @@ function App() {
             THE TRAITORS MUMBAI
           </div>
           <div className="footer-brand-sub">
-            TRUST IS RARE, DHOKHA EVERYWHERE · 20 PLAYERS • 24-25 OCTOBER, 2026
+            TRUST IS RARE, DHOKHA EVERYWHERE · 20 STRANGERS · SEPT 26-27, 2026
           </div>
           <div className="footer-copy">
             © 2026 The Traitors Mumbai. All rights reserved.

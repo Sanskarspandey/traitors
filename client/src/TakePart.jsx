@@ -25,7 +25,7 @@ function TakePart() {
 
         {/* HEADER */}
         <div className="take-header">
-          <p className="gold-label">THE TRAITORS MUMBAI · OCTOBER 24-25, 2026</p>
+          <p className="gold-label">THE TRAITORS MUMBAI · SEPT 26-27 (DEP: SEPT 25, 11 PM)</p>
 
           <h1>
             REQUEST
@@ -51,38 +51,38 @@ function TakePart() {
               <div>
                 <h2>OFFICIAL APPLICATION FORM</h2>
                 <p>
-                  We’re taking 20 strangers on a 2-day escape to the hills. Submit your application below to be considered by the hosts.
+                  We’re taking 20 strangers on a 2-day escape to the hills but there’s a catch. You won’t know where you’re going until it’s time to go.
                 </p>
               </div>
             </div>
 
             <div className="field" style={{ borderTop: "1px solid rgba(184, 155, 94, 0.25)", paddingTop: "24px" }}>
               <label style={{ color: "#c5a45f", letterSpacing: "2px", fontSize: "12px", fontFamily: "Cinzel, Georgia, serif" }}>
-                HOW ENTRY WORKS
+                WHAT AWAITS YOU
               </label>
 
               <div style={{ display: "flex", flexDirection: "column", gap: "16px", marginTop: "14px" }}>
                 <div style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
                   <span style={{ color: "#c5a45f", fontSize: "16px", fontWeight: "bold" }}>①</span>
                   <div style={{ color: "rgba(241, 234, 220, 0.88)", fontSize: "15px", lineHeight: "1.5" }}>
-                    <strong style={{ color: "#fff", display: "block" }}>Player Details & Strategy Style</strong>
-                    Tell us about yourself and choose how you plan to navigate alliances and deception.
+                    <strong style={{ color: "#fff", display: "block" }}>Come Alone</strong>
+                    You don’t need to convince your friends to come. In fact, we’d rather you didn’t. Arrive knowing nobody and leave with a whole new group.
                   </div>
                 </div>
 
                 <div style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
                   <span style={{ color: "#c5a45f", fontSize: "16px", fontWeight: "bold" }}>②</span>
                   <div style={{ color: "rgba(241, 234, 220, 0.88)", fontSize: "15px", lineHeight: "1.5" }}>
-                    <strong style={{ color: "#fff", display: "block" }}>Pass & Screenshot Verification</strong>
-                    ₹6,000 / Person (Includes beautiful stay amidst nature, breakfast & dinner, and full immersive game). Upload your transfer screenshot directly.
+                    <strong style={{ color: "#fff", display: "block" }}>All-Inclusive Pass (₹6,000)</strong>
+                    Stay at a beautiful property amidst nature, swimming pool, breakfast & dinner, and all games, challenges & unexpected twists.
                   </div>
                 </div>
 
                 <div style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
                   <span style={{ color: "#c5a45f", fontSize: "16px", fontWeight: "bold" }}>③</span>
                   <div style={{ color: "rgba(241, 234, 220, 0.88)", fontSize: "15px", lineHeight: "1.5" }}>
-                    <strong style={{ color: "#fff", display: "block" }}>Host Curation & Confirmation</strong>
-                    The hosts review all entries to curate 20 strangers. Selected players will receive private confirmation with travel coordinates.
+                    <strong style={{ color: "#fff", display: "block" }}>Safe Hands & Secret Location</strong>
+                    You’re in safe hands with the hosts. The location is secret because we want the whole weekend to feel like stepping into a real-life game.
                   </div>
                 </div>
               </div>
@@ -120,7 +120,7 @@ function TakePart() {
             <div className="panel-top">
               <span>THE TRAITORS</span>
               <div className="crest">T</div>
-              <span>OCT 24-25, 2026</span>
+              <span>SEPT 26-27</span>
             </div>
 
             <div className="panel-middle">
@@ -137,20 +137,20 @@ function TakePart() {
                 </div>
 
                 <div>
-                  <small>DATES</small>
-                  <strong>OCT 24-25</strong>
+                  <small>TRIP DATES</small>
+                  <strong>SEPT 26-27</strong>
                 </div>
 
                 <div>
-                  <small>LOCATION</small>
-                  <strong>SECRET HILLS</strong>
+                  <small>DEPARTURE</small>
+                  <strong>SEPT 25, 11PM</strong>
                 </div>
               </div>
             </div>
 
             <div className="panel-bottom">
               <p>
-                INCLUDES STAY AMIDST NATURE, BREAKFAST & DINNER,
+                INCLUDES STAY AMIDST NATURE, SWIMMING POOL, BREAKFAST & DINNER,
                 <br />
                 GAMES, CHALLENGES & UNEXPECTED TWISTS.
               </p>
