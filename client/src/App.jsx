@@ -250,7 +250,7 @@ function App() {
           <div className="hero-details">
             <span className="hero-detail-item">
               <span className="detail-icon">▣</span>
-              TRIP: SEPT 26–27 · DEP: SEPT 25, 11 PM
+              24-25 OCTOBER, 2026
             </span>
 
             <span className="detail-divider"></span>
@@ -280,7 +280,7 @@ function App() {
           </div>
 
           <div className="hero-limited">
-            LIMITED TO 20 PLAYERS ONLY · DEPARTURE: SEPTEMBER 25TH 11 PM
+            LIMITED TO 20 PLAYERS ONLY · 24-25 OCTOBER, 2026
           </div>
         </div>
       </section>
@@ -482,7 +482,7 @@ function App() {
             <ExperienceItem
               icon="♠"
               title="SECLUDED PROPERTY & NATURE"
-              text="Stay at a beautiful property amidst nature with a swimming pool, gourmet meals, and an immersive game atmosphere."
+              text="Stay at a beautiful property amidst nature, gourmet meals, and an immersive game atmosphere."
             />
           </div>
         </div>
@@ -592,7 +592,7 @@ function App() {
           </div>
 
           <p className="stay-summary-text">
-            TRIP DURATION: SEPTEMBER 26–27, 2026 · DEPARTURE: SEPTEMBER 25TH 11 PM
+            TRIP DURATION: OCTOBER 24–25, 2026
           </p>
 
           <div className="stay-inclusions-grid">
@@ -600,12 +600,6 @@ function App() {
               <span className="inclusion-icon">🏰</span>
               <h3>Stay at a beautiful property amidst nature</h3>
               <p>Exclusive private property nestled in the hills with serene natural surroundings</p>
-            </div>
-
-            <div className="stay-inclusion-card">
-              <span className="inclusion-icon">🏊</span>
-              <h3>Swimming Pool</h3>
-              <p>Poolside relaxation and refreshing leisure between challenges</p>
             </div>
 
             <div className="stay-inclusion-card">
@@ -620,7 +614,7 @@ function App() {
               <p>Full immersive game storyline, secret missions & props</p>
             </div>
 
-            <div className="stay-inclusion-card" style={{ gridColumn: "span 4" }}>
+            <div className="stay-inclusion-card">
               <span className="inclusion-icon">👥</span>
               <h3>20 strangers who might not be strangers by the end</h3>
               <p>A handpicked group of adventurous individuals sharing an unforgettable escape</p>
@@ -684,7 +678,7 @@ function App() {
               </a>
 
               <span>
-                20 STRANGERS · SEPT 26–27 · DEP: SEPT 25, 11 PM
+                20 STRANGERS · 24-25 OCTOBER, 2026
               </span>
             </div>
 
@@ -754,12 +748,12 @@ function App() {
 
             <FAQ
               question="When is the trip taking place?"
-              answer="Trip duration: September 26–27, 2026. Departure: September 25th at 11:00 PM."
+              answer="Trip duration: 24-25 October, 2026 (Saturday morning to Sunday evening)."
             />
 
             <FAQ
               question="What does the ₹6,000 pass include?"
-              answer="It includes your stay at a beautiful property amidst nature, swimming pool, breakfast & dinner across both days, and all games, challenges, and unexpected twists."
+              answer="It includes your stay at a beautiful property amidst nature, breakfast & dinner across both days, and all games, challenges, and unexpected twists."
             />
 
             <FAQ
@@ -791,7 +785,7 @@ function App() {
             THE TRAITORS MUMBAI
           </div>
           <div className="footer-brand-sub">
-            TRUST IS RARE, DHOKHA EVERYWHERE · 20 STRANGERS · SEPT 26-27, 2026
+            TRUST IS RARE, DHOKHA EVERYWHERE · 20 STRANGERS · 24-25 OCTOBER, 2026
           </div>
           <div className="footer-copy">
             © 2026 The Traitors Mumbai. All rights reserved.

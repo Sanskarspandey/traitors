@@ -25,7 +25,7 @@ function TakePart() {
 
         {/* HEADER */}
         <div className="take-header">
-          <p className="gold-label">THE TRAITORS MUMBAI · SEPT 26-27 (DEP: SEPT 25, 11 PM)</p>
+          <p className="gold-label">THE TRAITORS MUMBAI · OCTOBER 24-25, 2026</p>
 
           <h1>
             REQUEST
@@ -74,7 +74,7 @@ function TakePart() {
                   <span style={{ color: "#c5a45f", fontSize: "16px", fontWeight: "bold" }}>②</span>
                   <div style={{ color: "rgba(241, 234, 220, 0.88)", fontSize: "15px", lineHeight: "1.5" }}>
                     <strong style={{ color: "#fff", display: "block" }}>All-Inclusive Pass (₹6,000)</strong>
-                    Stay at a beautiful property amidst nature, swimming pool, breakfast & dinner, and all games, challenges & unexpected twists.
+                    Stay at a beautiful property amidst nature, breakfast & dinner, and all games, challenges & unexpected twists.
                   </div>
                 </div>
 
@@ -120,7 +120,7 @@ function TakePart() {
             <div className="panel-top">
               <span>THE TRAITORS</span>
               <div className="crest">T</div>
-              <span>SEPT 26-27</span>
+              <span>OCT 24-25</span>
             </div>
 
             <div className="panel-middle">
@@ -138,19 +138,19 @@ function TakePart() {
 
                 <div>
                   <small>TRIP DATES</small>
-                  <strong>SEPT 26-27</strong>
+                  <strong>OCT 24-25</strong>
                 </div>
 
                 <div>
-                  <small>DEPARTURE</small>
-                  <strong>SEPT 25, 11PM</strong>
+                  <small>LOCATION</small>
+                  <strong>SECRET HILLS</strong>
                 </div>
               </div>
             </div>
 
             <div className="panel-bottom">
               <p>
-                INCLUDES STAY AMIDST NATURE, SWIMMING POOL, BREAKFAST & DINNER,
+                INCLUDES STAY AMIDST NATURE, BREAKFAST & DINNER,
                 <br />
                 GAMES, CHALLENGES & UNEXPECTED TWISTS.
               </p>
