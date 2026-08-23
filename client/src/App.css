@@ -1,7 +1,6 @@
 /* =========================================================
    THE TRAITORS MUMBAI
-   Main Website Styles — Dark, Mysterious, Luxury Aesthetic
-   Fully Responsive from 320px to 4K Displays
+   Main Website Styles — Original Dark & Cinematic Aesthetic
    ========================================================= */
 
 :root {
@@ -11,19 +10,16 @@
 
   --black: #050505;
   --black-soft: #0b0a08;
-  --black-card: rgba(14, 12, 10, 0.92);
 
   --cream: #e8d8b2;
-  --cream-dim: #cfc2a5;
 
-  --border: rgba(197, 160, 90, 0.35);
-  --border-strong: rgba(197, 160, 90, 0.6);
+  --border: rgba(197, 160, 90, 0.55);
 
   --navbar-height: 80px;
 }
 
 /* =========================================================
-   GLOBAL RESET & BASE
+   GLOBAL RESET
    ========================================================= */
 
 *,
@@ -62,11 +58,8 @@ h3,
 .section-number,
 .footer-brand-title,
 .footer-section-label,
-.routine-chips span,
 .nav-title,
-.menu-crest,
-.element-badge,
-.rule-idx {
+.menu-crest {
   font-family: "Cinzel", Georgia, "Times New Roman", serif;
 }
 
@@ -101,7 +94,7 @@ button {
 }
 
 /* =========================================================
-   NAVBAR (FIXED, ACCESSIBLE, PREMIUM)
+   NAVBAR (FIXED, ACCESSIBLE, NO OVERLAPPING)
    ========================================================= */
 
 .navbar {
@@ -111,11 +104,11 @@ button {
   right: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(5, 5, 5, 0.9);
+  background: rgba(5, 5, 5, 0.88);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(197, 160, 90, 0.22);
-  transition: background 0.3s ease, border-color 0.3s ease;
+  transition: background 0.3s ease;
 }
 
 .navbar-container {
@@ -178,15 +171,14 @@ button {
 .nav-links button {
   color: #eee4cf;
   font-size: 12px;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.4px;
   padding: 8px 4px;
   font-family: "Cinzel", Georgia, serif;
-  transition: color 0.25s ease, transform 0.25s ease;
+  transition: color 0.25s ease;
 }
 
 .nav-links button:hover {
   color: var(--gold-light);
-  transform: translateY(-1px);
 }
 
 .nav-take-part {
@@ -194,7 +186,7 @@ button {
   align-items: center;
   justify-content: center;
   min-width: 130px;
-  padding: 10px 20px;
+  padding: 10px 22px;
   color: #f3dfb4;
   text-decoration: none;
   background: rgba(197, 160, 90, 0.12);
@@ -215,7 +207,7 @@ button {
 }
 
 /* =========================================================
-   MOBILE MENU TOGGLE BUTTON
+   MOBILE MENU TOGGLE & DRAWER
    ========================================================= */
 
 .menu-toggle-btn {
@@ -228,13 +220,7 @@ button {
   border: 1px solid rgba(197, 160, 90, 0.35);
   border-radius: 4px;
   cursor: pointer;
-  transition: background 0.25s ease, border-color 0.25s ease;
   z-index: 2005;
-}
-
-.menu-toggle-btn:hover {
-  background: rgba(197, 160, 90, 0.2);
-  border-color: var(--gold);
 }
 
 .hamburger-box {
@@ -252,7 +238,7 @@ button {
   height: 2px;
   background: var(--gold-light);
   border-radius: 2px;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .menu-toggle-btn.open .line-1 {
@@ -266,10 +252,6 @@ button {
 .menu-toggle-btn.open .line-3 {
   transform: translateY(-7px) rotate(-45deg);
 }
-
-/* =========================================================
-   MOBILE MENU OVERLAY & DRAWER
-   ========================================================= */
 
 .mobile-menu-overlay {
   position: fixed;
@@ -313,7 +295,6 @@ button {
   transform: translateX(100%);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
   z-index: 2;
 }
 
@@ -357,12 +338,6 @@ button {
   border: 1px solid rgba(197, 160, 90, 0.3);
   border-radius: 4px;
   cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-.mobile-close-btn:hover {
-  background: var(--gold);
-  color: var(--black);
 }
 
 .mobile-menu-divider {
@@ -389,13 +364,6 @@ button {
   background: transparent;
   border-radius: 4px;
   border-bottom: 1px solid rgba(197, 160, 90, 0.1);
-  transition: all 0.25s ease;
-}
-
-.mobile-nav-list button:hover,
-.mobile-nav-list button:focus {
-  background: rgba(197, 160, 90, 0.12);
-  padding-left: 18px;
 }
 
 .nav-num {
@@ -461,7 +429,7 @@ button {
 }
 
 /* =========================================================
-   1. HERO SECTION
+   1. HERO
    ========================================================= */
 
 .hero-section {
@@ -496,7 +464,7 @@ button {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(5, 5, 5, 0.55) 0%, rgba(5, 5, 5, 0.94) 85%);
+  background: radial-gradient(circle at center, rgba(5, 5, 5, 0.5) 0%, rgba(5, 5, 5, 0.92) 80%);
   z-index: 1;
 }
 
@@ -518,11 +486,12 @@ button {
   line-height: 1.4;
 }
 
+/* SLENDER, CLASSICAL CINZEL HERO TITLE (EXACTLY LIKE SCREENSHOT) */
 .hero-title,
 .hero-content h1,
 .hero-content .hero-title {
-  font-family: "Cinzel", Georgia, serif;
-  font-size: clamp(52px, 8.5vw, 115px);
+  font-family: "Cinzel", Georgia, "Times New Roman", serif;
+  font-size: clamp(48px, 8.5vw, 115px);
   font-weight: 400 !important;
   line-height: 0.92;
   color: #f1eadc !important;
@@ -611,13 +580,13 @@ button {
 }
 
 /* =========================================================
-   GENERIC SECTION WRAPPER
+   GENERIC SECTION
    ========================================================= */
 
 .section {
   position: relative;
-  min-height: max(550px, 45vw);
-  background-color: #040404;
+  min-height: max(640px, 60vw);
+  background-color: #020202;
   border-bottom: 1px solid var(--border);
   overflow: hidden;
   display: flex;
@@ -632,34 +601,21 @@ button {
   position: absolute;
   z-index: 1;
   inset: 0;
-  background: linear-gradient(90deg, rgba(4, 4, 4, 0.94), rgba(4, 4, 4, 0.75), rgba(4, 4, 4, 0.92));
-}
-
-.dark-overlay {
-  background: linear-gradient(90deg, rgba(3, 3, 3, 0.92), rgba(3, 3, 3, 0.82), rgba(3, 3, 3, 0.94));
-}
-
-.experience-overlay {
-  background: linear-gradient(90deg, rgba(3, 3, 3, 0.96) 0%, rgba(3, 3, 3, 0.88) 45%, rgba(3, 3, 3, 0.7) 100%);
-}
-
-.rules-overlay {
-  background: linear-gradient(180deg, rgba(4, 4, 4, 0.94) 0%, rgba(4, 4, 4, 0.84) 50%, rgba(4, 4, 4, 0.96) 100%);
+  background: linear-gradient(90deg, rgba(3, 3, 3, 0.93), rgba(3, 3, 3, 0.65), rgba(3, 3, 3, 0.88));
 }
 
 .section-number {
   display: inline-block;
   color: var(--gold-light);
-  font-size: 26px;
-  margin-bottom: 8px;
-  font-family: "Cinzel", Georgia, serif;
+  font-size: 32px;
+  margin-right: 8px;
 }
 
 .gold-line {
   width: 60px;
   height: 2px;
   background: var(--gold);
-  margin: 16px 0 26px;
+  margin: 16px 0 28px;
 }
 
 .gold-line.center {
@@ -673,96 +629,64 @@ button {
 }
 
 .center-title h2,
-.section-heading,
+.experience-content h2,
+.stay-content h2,
 .take-part-inner h2,
-.routine-content h2,
 .faq-title h2 {
-  color: var(--gold-light);
-  font-size: clamp(26px, 4.5vw, 42px);
-  font-weight: 400;
-  letter-spacing: clamp(1.5px, 0.4vw, 3px);
+  display: inline-block;
   margin: 0;
-  line-height: 1.2;
+  color: var(--gold-light);
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 400;
+  letter-spacing: 3px;
 }
 
 /* =========================================================
-   2. THE CATCH SECTION
+   2. WHAT IS THE ESTATE? (IMAGE 1)
    ========================================================= */
 
-.catch-section {
+.what-section {
+  min-height: max(640px, 60vw);
   background-position: center;
 }
 
-.catch-content {
+.what-content {
   position: relative;
-  z-index: 3;
-  width: 920px;
-  max-width: 100%;
-  margin: 0 auto;
+  z-index: 2;
+  width: 950px;
+  max-width: 90%;
+  margin: auto;
+  padding: 85px 0;
 }
 
-.lead-story-text {
-  font-size: clamp(19px, 2.6vw, 28px);
-  line-height: 1.6;
-  color: #ede2cd;
-  margin: 20px 0 28px;
-}
-
-.lead-story-text strong {
+.section-heading {
+  display: inline;
   color: var(--gold-light);
+  font-size: clamp(26px, 4vw, 42px);
+  letter-spacing: 3px;
 }
 
-.safe-card {
-  display: flex;
-  align-items: center;
-  gap: 22px;
-  background: var(--black-card);
-  border: 1px solid rgba(197, 160, 90, 0.4);
-  border-left: 4px solid var(--gold);
-  padding: 24px 28px;
-  margin: 30px 0;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(8px);
-  width: 100%;
+.what-content p {
+  margin: 16px 0;
+  color: #dcd0b5;
+  font-size: clamp(17px, 2vw, 22px);
+  line-height: 1.7;
 }
 
-.safe-icon {
-  font-size: 34px;
-  flex-shrink: 0;
-}
-
-.safe-text strong {
-  display: block;
-  font-family: "Cinzel", Georgia, serif;
+.what-content .strong-line {
   color: var(--gold-light);
-  font-size: 16px;
-  letter-spacing: 1.5px;
-  margin-bottom: 6px;
-}
-
-.safe-text p {
-  margin: 0;
-  color: var(--cream-dim);
-  font-size: 17px;
-  line-height: 1.55;
-}
-
-.catch-climax-text {
-  color: #e0c27c;
-  font-size: clamp(17px, 2.2vw, 22px);
-  line-height: 1.65;
-  font-style: italic;
   margin-top: 24px;
-  border-left: 2px solid rgba(197, 160, 90, 0.5);
-  padding-left: 20px;
+  font-size: clamp(20px, 2.5vw, 26px);
+  font-weight: 600;
+  letter-spacing: 2px;
 }
 
 .what-decoration {
   position: absolute;
-  right: 5%;
+  left: 4%;
   top: 50%;
   transform: translateY(-50%);
-  opacity: 0.3;
+  opacity: 0.35;
   pointer-events: none;
 }
 
@@ -781,147 +705,247 @@ button {
 }
 
 /* =========================================================
-   3. "THINK..." THE EXPERIENCE
+   3. HOW IT WORKS (IMAGE 2)
    ========================================================= */
 
-.game-elements-section {
+.how-section {
+  min-height: max(640px, 60vw);
   background-position: center;
 }
 
-.game-elements-inner {
+.dark-overlay {
+  background: linear-gradient(90deg, rgba(3, 3, 3, 0.88), rgba(3, 3, 3, 0.92));
+}
+
+.how-inner {
   position: relative;
   z-index: 3;
-  max-width: 1280px;
+  padding: 60px 5%;
+  max-width: 1250px;
   margin: 0 auto;
   width: 100%;
 }
 
-.section-subtext {
-  color: var(--cream-dim);
-  font-size: clamp(16px, 2vw, 18px);
-  margin-top: -10px;
-  letter-spacing: 0.5px;
-}
-
-.elements-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 18px;
-  margin-top: 40px;
+.steps {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 45px;
   width: 100%;
 }
 
-.element-card {
-  position: relative;
-  background: var(--black-card);
-  border: 1px solid var(--border);
-  padding: 32px 18px;
+.step {
+  width: 190px;
   text-align: center;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(10px);
-  width: 100%;
 }
 
-.element-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--gold);
-  box-shadow: 0 20px 45px rgba(197, 160, 90, 0.18);
-}
-
-.element-badge {
-  position: absolute;
-  top: 12px;
-  right: 14px;
-  font-size: 11px;
-  color: rgba(197, 160, 90, 0.5);
-  letter-spacing: 1px;
-}
-
-.element-icon {
-  width: 54px;
-  height: 54px;
+.step-icon {
+  width: 72px;
+  height: 72px;
   margin: 0 auto 14px;
-  border-radius: 50%;
-  border: 1px solid rgba(197, 160, 90, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
   color: var(--gold-light);
-  background: rgba(0, 0, 0, 0.5);
+  font-size: 32px;
+  background: rgba(5, 5, 5, 0.6);
+  box-shadow: 0 0 20px rgba(197, 160, 90, 0.15);
 }
 
-.element-card h3 {
-  font-size: 18px;
+.step h3 {
+  margin: 8px 0 10px;
   color: var(--gold-light);
-  letter-spacing: 2px;
-  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
-.element-card p {
-  color: var(--cream-dim);
-  font-size: 15px;
-  line-height: 1.55;
+.step p {
   margin: 0;
+  color: #c5b89a;
+  font-size: 15px;
+  line-height: 1.6;
 }
 
-.element-chaos {
-  border-color: rgba(224, 108, 96, 0.45);
-}
-
-.element-chaos .element-icon {
-  color: #e06c60;
-  border-color: rgba(224, 108, 96, 0.5);
-}
-
-.element-chaos h3 {
-  color: #e8867a;
+.step-arrow {
+  color: var(--gold);
+  font-size: 28px;
+  padding-top: 25px;
 }
 
 .shield-decoration {
   position: absolute;
   right: 3%;
   bottom: -40px;
-  width: 220px;
-  opacity: 0.45;
+  width: 240px;
+  opacity: 0.65;
   z-index: 2;
   pointer-events: none;
   filter: brightness(0.65) sepia(0.3);
 }
 
 /* =========================================================
-   4. WHAT'S INCLUDED
+   4. THE EXPERIENCE
    ========================================================= */
 
-.included-section {
+.experience-section {
+  min-height: max(640px, 60vw);
   background-position: center;
 }
 
-.included-inner {
+.experience-overlay {
+  background: linear-gradient(90deg, rgba(3, 3, 3, 0.96) 0%, rgba(3, 3, 3, 0.9) 40%, rgba(3, 3, 3, 0.4) 100%);
+}
+
+.experience-content {
   position: relative;
   z-index: 3;
-  max-width: 1180px;
+  width: 800px;
+  max-width: 88%;
+  margin-left: 8%;
+  padding: 70px 0;
+}
+
+.experience-list {
+  margin-top: 35px;
+}
+
+.experience-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 26px;
+}
+
+.experience-icon {
+  color: var(--gold);
+  width: 32px;
+  font-size: 28px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.experience-item h3 {
+  margin: 0 0 6px;
+  color: var(--gold-light);
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+}
+
+.experience-item p {
+  margin: 0;
+  color: #d0c2a2;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+/* =========================================================
+   5. THE RULES (IMAGE 3)
+   ========================================================= */
+
+.rules-section {
+  min-height: max(640px, 60vw);
+  background-position: center;
+}
+
+.rules-overlay {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.94), rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.9));
+}
+
+.rules-inner {
+  position: relative;
+  z-index: 3;
+  padding: 65px 5%;
+  max-width: 1250px;
   margin: 0 auto;
   width: 100%;
+}
+
+.rules-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 26px;
+  max-width: 1150px;
+  margin: 45px auto 0;
+  width: 100%;
+}
+
+.rule {
+  text-align: center;
+}
+
+.rule-icon {
+  width: 68px;
+  height: 68px;
+  margin: 0 auto 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  color: var(--gold);
+  font-size: 28px;
+  background: rgba(5, 5, 5, 0.6);
+  box-shadow: 0 0 20px rgba(197, 160, 90, 0.15);
+}
+
+.rule h3 {
+  margin: 8px 0 10px;
+  color: var(--gold-light);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.rule p {
+  margin: 0;
+  color: #d0c4a8;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   6. THE STAY / WHAT'S INCLUDED
+   ========================================================= */
+
+.stay-section {
+  min-height: max(640px, 60vw);
+  background-position: center;
+}
+
+.stay-overlay {
+  background: linear-gradient(90deg, rgba(5, 5, 5, 0.96), rgba(5, 5, 5, 0.88), rgba(5, 5, 5, 0.96));
+}
+
+.stay-content {
+  position: relative;
+  z-index: 3;
+  padding: 70px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
 }
 
 .stay-pricing-badge {
   display: inline-flex;
   align-items: baseline;
-  justify-content: center;
   gap: 12px;
   background: rgba(197, 160, 90, 0.12);
   border: 1px solid var(--border);
   padding: 10px 24px;
-  margin: 10px auto 15px;
+  margin: 10px 0 15px;
   flex-wrap: wrap;
-  max-width: 100%;
+  justify-content: center;
 }
 
 .stay-price {
   font-family: "Cinzel", Georgia, serif;
-  font-size: 26px;
+  font-size: 28px;
   color: #fff;
   font-weight: 700;
   letter-spacing: 1px;
@@ -934,261 +958,90 @@ button {
   letter-spacing: 2px;
 }
 
-.included-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 22px;
-  margin-top: 36px;
-  width: 100%;
-}
-
-.included-card {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-  background: var(--black-card);
-  border: 1px solid var(--border);
-  padding: 26px 24px;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(8px);
-  transition: all 0.3s ease;
-  width: 100%;
-}
-
-.included-card:hover {
-  border-color: var(--gold);
-  transform: translateY(-3px);
-}
-
-.included-icon {
-  font-size: 30px;
-  flex-shrink: 0;
-  padding-top: 2px;
-}
-
-.included-body h3 {
-  font-size: 18px;
+.stay-summary-text {
   color: var(--gold-light);
-  letter-spacing: 1px;
-  margin: 0 0 8px;
-  font-weight: 500;
-  line-height: 1.35;
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-family: "Cinzel", Georgia, serif;
+  margin-bottom: 35px;
 }
 
-.included-body p {
-  color: var(--cream-dim);
-  font-size: 16px;
-  line-height: 1.55;
-  margin: 0;
-}
-
-/* =========================================================
-   5. THE RULES ARE SIMPLE
-   ========================================================= */
-
-.rules-section {
-  background-position: center;
-}
-
-.rules-inner {
-  position: relative;
-  z-index: 3;
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-.rules-simple-grid {
+.stay-inclusions-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  margin-top: 40px;
+  margin-top: 25px;
   width: 100%;
 }
 
-.rule-simple-card {
-  position: relative;
-  background: var(--black-card);
-  border: 1px solid var(--border);
-  padding: 32px 22px;
-  text-align: left;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
-  width: 100%;
-}
-
-.rule-simple-card:hover {
-  border-color: var(--gold);
-  transform: translateY(-4px);
-}
-
-.rule-idx {
-  display: block;
-  font-size: 13px;
-  color: var(--gold);
-  letter-spacing: 2px;
-  margin-bottom: 12px;
-}
-
-.rule-simple-card h3 {
-  font-size: 18px;
-  color: #f1eadc;
-  letter-spacing: 1.5px;
-  margin: 0 0 12px;
-  line-height: 1.35;
-}
-
-.rule-simple-card p {
-  color: var(--cream-dim);
-  font-size: 15px;
-  line-height: 1.55;
-  margin: 0;
-}
-
-.rule-danger {
-  border-color: rgba(197, 160, 90, 0.6);
-  background: linear-gradient(135deg, rgba(25, 18, 12, 0.92), rgba(12, 10, 8, 0.96));
-}
-
-/* =========================================================
-   6. DON'T BRING YOUR FRIENDS (COME ALONE)
-   ========================================================= */
-
-.come-alone-section {
-  background-position: center;
-}
-
-.come-alone-content {
-  position: relative;
-  z-index: 3;
-  width: 920px;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-.highlight-quote {
-  font-size: clamp(20px, 3.5vw, 30px);
-  line-height: 1.55;
-  color: #ede2cd;
-  margin: 22px 0 18px;
-}
-
-.gold-text {
-  color: var(--gold-light);
-  font-weight: 600;
-}
-
-.narrative-p {
-  color: var(--cream-dim);
-  font-size: clamp(17px, 2.2vw, 22px);
-  line-height: 1.6;
-  margin-bottom: 30px;
-}
-
-.social-philosophy-card {
-  display: flex;
-  align-items: center;
-  gap: 22px;
-  background: var(--black-card);
-  border: 1px solid var(--border);
-  padding: 26px 28px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(8px);
-  width: 100%;
-}
-
-.philosophy-icon {
-  font-size: 38px;
-  color: var(--gold);
-  flex-shrink: 0;
-}
-
-.social-philosophy-card p {
-  margin: 0;
-  color: #dcd0b5;
-  font-size: 17px;
-  line-height: 1.6;
-}
-
-/* =========================================================
-   7. TWO DAYS. NO ROUTINE.
-   ========================================================= */
-
-.routine-section {
-  background-position: center;
-}
-
-.routine-content {
-  position: relative;
-  z-index: 3;
+.stay-inclusion-card {
+  background: rgba(15, 12, 9, 0.85);
+  border: 1px solid rgba(197, 160, 90, 0.35);
+  padding: 28px 20px;
   text-align: center;
-  max-width: 880px;
-  width: 100%;
-  margin: 0 auto;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  backdrop-filter: blur(8px);
 }
 
-.routine-quote-box {
-  margin-top: 28px;
+.stay-inclusion-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold);
 }
 
-.routine-quote-main {
-  font-size: clamp(20px, 3.8vw, 34px);
-  line-height: 1.65;
+.inclusion-icon {
+  font-size: 36px;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.stay-inclusion-card h3 {
+  margin: 0 0 10px;
   color: var(--gold-light);
-  font-style: italic;
-  margin: 0 0 30px;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
-.routine-chips {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.routine-chips span {
-  background: rgba(197, 160, 90, 0.12);
-  border: 1px solid rgba(197, 160, 90, 0.4);
-  color: #ede2cd;
-  padding: 8px 16px;
-  font-size: 13px;
-  letter-spacing: 1.2px;
+.stay-inclusion-card p {
+  margin: 0;
+  color: #c7ba9c;
+  font-size: 15px;
+  line-height: 1.65;
 }
 
 /* =========================================================
-   8. FINAL CTA (TAKE PART)
+   7. TAKE PART
    ========================================================= */
 
 .take-part-section {
-  min-height: 480px;
+  min-height: max(560px, 52vw);
   background-position: center;
 }
 
 .take-part-overlay {
-  background: radial-gradient(circle at center, rgba(3, 3, 3, 0.88), rgba(3, 3, 3, 0.97));
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.9));
 }
 
 .take-part-inner {
   position: relative;
   z-index: 3;
+  padding: 65px 5%;
   text-align: center;
-  max-width: 950px;
+  max-width: 1100px;
   margin: 0 auto;
   width: 100%;
 }
 
 .entry-card {
+  max-width: 900px;
+  min-height: 130px;
+  margin: 35px auto 0;
+  border: 1px solid rgba(197, 160, 90, 0.45);
+  background: rgba(5, 5, 5, 0.8);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background: var(--black-card);
-  border: 1px solid var(--border);
-  padding: 42px 48px;
-  margin-top: 35px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(12px);
-  width: 100%;
+  justify-content: space-around;
+  padding: 24px 35px;
   gap: 20px;
 }
 
@@ -1196,59 +1049,51 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
 }
 
 .entry-label {
-  font-size: 11px;
+  color: var(--gold);
+  font-size: 12px;
   letter-spacing: 2px;
-  color: #a78b55;
   font-family: "Cinzel", Georgia, serif;
 }
 
 .entry-price {
-  font-size: 38px;
-  color: #fff;
-  font-weight: 700;
+  color: var(--gold-light);
+  font-size: 42px;
   font-family: "Cinzel", Georgia, serif;
+  margin: 4px 0;
 }
 
 .entry-note {
-  font-size: 11.5px;
-  letter-spacing: 1.5px;
-  color: var(--gold-light);
-  font-family: "Cinzel", Georgia, serif;
-  text-align: center;
+  color: #b5a786;
+  font-size: 12px;
+  letter-spacing: 1.2px;
 }
 
 .entry-middle {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
-  flex: 1;
+  gap: 10px;
 }
 
-.entry-middle span {
-  font-size: 11px;
-  letter-spacing: 1.5px;
-  color: #9e8d6f;
+.entry-middle > span {
+  color: #b5a786;
+  font-size: 12px;
+  letter-spacing: 1.2px;
   font-family: "Cinzel", Georgia, serif;
-  text-align: center;
 }
 
 /* =========================================================
-   9. FAQ
+   8. FAQ
    ========================================================= */
 
 .faq-section {
   position: relative;
-  min-height: max(550px, 45vw);
-  background-color: #030303;
-  padding: 85px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  min-height: max(680px, 60vw);
+  padding: 95px 8%;
+  background-color: #050505;
   border-bottom: 1px solid var(--border);
   overflow: hidden;
   width: 100%;
@@ -1261,56 +1106,56 @@ button {
 .faq-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(3, 3, 3, 0.9), rgba(3, 3, 3, 0.98));
   z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(5, 5, 5, 0.94), rgba(5, 5, 5, 0.65), rgba(5, 5, 5, 0.94)),
+    linear-gradient(180deg, rgba(5, 5, 5, 0.5), rgba(5, 5, 5, 0.92));
 }
 
 .faq-content {
   position: relative;
   z-index: 2;
-  max-width: 1050px;
   width: 100%;
+  max-width: 1100px;
   margin: 0 auto;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .faq-title {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
 .faq-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+  max-width: 1050px;
   width: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
 }
 
 .faq-item {
-  background: var(--black-card);
-  border: 1px solid var(--border);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(8px);
-  transition: border-color 0.25s ease;
+  border: 1px solid rgba(197, 160, 90, 0.35);
+  background: rgba(20, 17, 13, 0.82);
+  backdrop-filter: blur(4px);
   width: 100%;
 }
 
-.faq-item:hover {
-  border-color: var(--gold);
-}
-
 .faq-item summary {
-  padding: 20px 22px;
-  color: #eee3cc;
-  font-family: "Cinzel", Georgia, serif;
-  font-size: 15.5px;
-  letter-spacing: 1px;
-  cursor: pointer;
   list-style: none;
+  cursor: pointer;
+  padding: 22px 26px;
+  color: var(--gold-light);
+  font-size: 17px;
+  letter-spacing: 0.8px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 12px;
-  min-height: 48px;
+  justify-content: space-between;
+  font-family: "Cinzel", Georgia, serif;
 }
 
 .faq-item summary::-webkit-details-marker {
@@ -1319,114 +1164,110 @@ button {
 
 .faq-item summary span {
   color: var(--gold);
-  font-size: 20px;
-  transition: transform 0.25s ease;
-  flex-shrink: 0;
-}
-
-.faq-item[open] summary span {
-  transform: rotate(45deg);
+  font-size: 26px;
+  font-weight: 300;
 }
 
 .faq-item p {
-  padding: 0 22px 20px;
   margin: 0;
-  color: var(--cream-dim);
-  font-size: 15.5px;
-  line-height: 1.6;
+  padding: 0 26px 22px;
+  color: #c9bda0;
+  font-size: 16px;
+  line-height: 1.75;
 }
 
 /* =========================================================
-   10. FOOTER
+   FOOTER
    ========================================================= */
 
 .footer {
-  position: relative;
-  z-index: 10;
-  padding: 45px 40px;
+  min-height: 110px;
+  padding: 45px 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #020202;
-  border-top: 1px solid var(--border);
   gap: 30px;
+  background: #030303;
+  border-top: 1px solid var(--border);
+  color: #8f805f;
+  font-size: 13px;
+  letter-spacing: 1px;
   width: 100%;
   max-width: 100vw;
 }
 
 .footer-estate-brand {
-  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .footer-brand-title {
   color: var(--gold-light);
-  font-size: 17px;
-  letter-spacing: 2px;
+  font-size: 20px;
+  letter-spacing: 2.5px;
   font-weight: 700;
-  margin-bottom: 6px;
 }
 
 .footer-brand-sub {
-  color: #8f7d5a;
-  font-size: 11px;
-  letter-spacing: 1.5px;
+  color: var(--gold);
+  font-size: 13px;
+  letter-spacing: 2px;
   font-family: "Cinzel", Georgia, serif;
-  margin-bottom: 8px;
-  line-height: 1.4;
 }
 
 .footer-copy {
-  color: #5c5240;
-  font-size: 12px;
+  color: rgba(232, 216, 178, 0.5);
+  font-size: 13px;
+  margin-top: 8px;
 }
 
 .footer-info-group {
   display: flex;
-  gap: 40px;
+  align-items: center;
+  gap: 50px;
 }
 
 .footer-contact-block,
 .footer-social-block {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 }
 
 .footer-section-label {
-  color: #a78b55;
-  font-size: 10px;
-  letter-spacing: 2px;
+  color: var(--gold);
+  font-size: 12px;
   font-weight: 600;
-  margin-bottom: 4px;
+  letter-spacing: 2px;
 }
 
 .footer-contact-name {
-  color: #ede2cd;
-  font-size: 14.5px;
+  color: var(--cream);
+  font-size: 16px;
+  letter-spacing: 0.8px;
 }
 
 .footer-contact-link,
 .footer-instagram-link {
   color: var(--gold-light);
+  font-size: 16px;
   text-decoration: none;
-  font-size: 14.5px;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
   transition: color 0.25s ease;
-  display: inline-block;
-  padding: 4px 0;
 }
 
 .footer-contact-link:hover,
 .footer-instagram-link:hover {
-  color: #fff;
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 /* =========================================================
    RESPONSIVE BREAKPOINTS
    ========================================================= */
 
-/* Tablet & Smaller Laptops (<= 1024px) */
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .mobile-only {
     display: flex !important;
   }
@@ -1444,21 +1285,16 @@ button {
     --navbar-height: 70px;
   }
 
-  .elements-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .steps {
+    gap: 12px;
   }
 
-  .rules-simple-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .step {
+    width: 150px;
   }
 }
 
-/* Medium Tablets & Large Phones (<= 850px) */
 @media (max-width: 850px) {
-  .section {
-    padding: 70px 20px;
-  }
-
   .hero-section {
     padding: calc(var(--navbar-height) + 35px) 18px 50px;
     min-height: auto;
@@ -1476,43 +1312,50 @@ button {
     display: none;
   }
 
-  .elements-grid {
+  .steps {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .step-arrow {
+    display: none;
+  }
+
+  .rules-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .included-grid {
-    grid-template-columns: 1fr;
+  .stay-inclusions-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .entry-card {
     flex-direction: column;
-    gap: 24px;
-    padding: 32px 22px;
-  }
-
-  .entry-middle {
-    width: 100%;
-  }
-
-  .entry-middle .gold-button {
-    width: 100%;
-    max-width: 360px;
+    gap: 22px;
+    padding: 30px 20px;
   }
 
   .faq-grid {
     grid-template-columns: 1fr;
   }
 
+  .faq-section {
+    min-height: max(560px, 56.25vw);
+    padding: 75px 7%;
+  }
+
   .footer {
     flex-direction: column;
     text-align: center;
     align-items: center;
-    padding: 38px 20px;
+    padding: 40px 20px;
+    gap: 28px;
   }
 
   .footer-info-group {
     flex-direction: column;
-    gap: 20px;
+    gap: 22px;
+    text-align: center;
     align-items: center;
   }
 
@@ -1521,13 +1364,11 @@ button {
   }
 
   .shield-decoration {
-    opacity: 0.2;
-    width: 150px;
+    opacity: 0.25;
   }
 }
 
-/* Small Tablets & Mobile Phones (<= 640px) */
-@media (max-width: 640px) {
+@media (max-width: 600px) {
   .brand-name {
     font-size: 16px;
     letter-spacing: 1.5px;
@@ -1535,7 +1376,6 @@ button {
 
   .brand-tagline {
     font-size: 8px;
-    letter-spacing: 1.5px;
   }
 
   .brand-symbol {
@@ -1544,72 +1384,85 @@ button {
 
   .hero-content h1,
   .hero-title {
-    font-size: clamp(36px, 10vw, 64px);
-    font-weight: 400 !important;
+    font-size: clamp(38px, 11vw, 64px);
     line-height: 0.95;
     letter-spacing: 2px;
   }
 
-  .elements-grid {
+  .section {
+    min-height: max(520px, 50vw);
+    padding: 65px 20px;
+  }
+
+  .what-section {
+    min-height: 440px;
+  }
+
+  .what-content {
+    padding: 45px 15px;
+  }
+
+  .how-section {
+    min-height: 520px;
+  }
+
+  .how-inner {
+    padding: 45px 15px;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px 12px;
+  }
+
+  .step {
+    width: auto;
+  }
+
+  .experience-section {
+    min-height: 520px;
+  }
+
+  .experience-content {
+    width: auto;
+    margin-left: 0;
+    padding: 45px 15px;
+  }
+
+  .rules-section {
+    min-height: max(520px, 50vw);
+  }
+
+  .rules-inner {
+    padding: 45px 15px;
+  }
+
+  .rules-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 10px;
+  }
+
+  .stay-section {
+    min-height: 500px;
+  }
+
+  .stay-content {
+    padding: 45px 15px;
+  }
+
+  .stay-inclusions-grid {
     grid-template-columns: 1fr;
     gap: 14px;
   }
 
-  .rules-simple-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  .safe-card {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px 18px;
-    gap: 12px;
-  }
-
-  .social-philosophy-card {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px 18px;
-    gap: 12px;
-  }
-
-  .routine-chips span {
-    font-size: 12px;
-    padding: 6px 12px;
-  }
-
-  .entry-price {
-    font-size: 32px;
-  }
-}
-
-/* Very Small Phones (<= 380px) */
-@media (max-width: 380px) {
-  .brand-tagline {
-    display: none;
-  }
-
-  .navbar-container {
-    padding: 12px 14px;
-  }
-
-  .hero-section {
-    padding: calc(var(--navbar-height) + 20px) 14px 40px;
-  }
-
-  .gold-button {
-    padding: 14px 20px;
-    font-size: 11.5px;
-    letter-spacing: 1.5px;
-  }
-
-  .entry-card {
-    padding: 24px 16px;
+  .faq-section {
+    min-height: max(620px, 56.25vw);
+    padding: 70px 15px;
   }
 
   .faq-item summary {
-    padding: 16px;
-    font-size: 14.5px;
+    padding: 18px 20px;
+    font-size: 15px;
   }
 }
