@@ -4,6 +4,7 @@ import "./App.css";
 
 const IMG = `${import.meta.env.BASE_URL || "/"}images`.replace(/\/\/+/g, "/");
 const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf0W9L1Jrk8_gJhqriE0zBwZ5xYP7SZFm1BtojvByX9gTB5rg/viewform";
+const INSTAGRAM_URL = "https://www.instagram.com/the_traitors_mumbai/";
 
 function App() {
   const scrollToSection = (id) => {
@@ -20,7 +21,6 @@ function App() {
       ===================================================== */}
 
       <header className="navbar">
-
         <div
           className="brand"
           onClick={() => scrollToSection("home")}
@@ -28,51 +28,39 @@ function App() {
           <div className="brand-symbol">
             ♛
           </div>
-
           <div>
             <div className="brand-name">
               THE TRAITORS MUMBAI
             </div>
-
             <div className="brand-tagline">
               TRUST IS RARE, DHOKHA EVERYWHERE
             </div>
           </div>
         </div>
 
-
         <nav className="nav-links">
-
           <button onClick={() => scrollToSection("home")}>
             HOME
           </button>
-
-          <button onClick={() => scrollToSection("what-is-this")}>
-            WHAT IS THIS?
+          <button onClick={() => scrollToSection("the-catch")}>
+            THE CATCH
           </button>
-
-          <button onClick={() => scrollToSection("how-it-works")}>
-            HOW IT WORKS
+          <button onClick={() => scrollToSection("the-game")}>
+            THE GAME
           </button>
-
-          <button onClick={() => scrollToSection("experience")}>
-            THE EXPERIENCE
+          <button onClick={() => scrollToSection("included")}>
+            WHAT'S INCLUDED
           </button>
-
           <button onClick={() => scrollToSection("rules")}>
             THE RULES
           </button>
-
-          <button onClick={() => scrollToSection("stay")}>
-            THE STAY
+          <button onClick={() => scrollToSection("come-alone")}>
+            COME ALONE
           </button>
-
           <button onClick={() => scrollToSection("faq")}>
             FAQ
           </button>
-
         </nav>
-
 
         <a
           href={GOOGLE_FORM_URL}
@@ -80,9 +68,8 @@ function App() {
           rel="noopener noreferrer"
           className="nav-take-part"
         >
-          REQUEST ENTRY
+          TAKE PART
         </a>
-
       </header>
 
 
@@ -97,19 +84,17 @@ function App() {
           backgroundImage: `url("${IMG}/masked-hero.png")`,
         }}
       >
-
         <img
           className="section-bg-image hero-bg-image"
           src={`${IMG}/masked-hero.png`}
-          alt="The Estate Masked Figure"
+          alt="The Traitors Masked Figure"
         />
 
         <div className="hero-overlay"></div>
 
         <div className="hero-content">
-
           <div className="hero-eyebrow">
-            20 PLAYERS · 1 MANSION · 24-25 OCTOBER, 2026
+            20 STRANGERS · 2-DAY ESCAPE · SECRET DESTINATION · OCTOBER 24–25, 2026
           </div>
 
           <h1>
@@ -121,433 +106,432 @@ function App() {
           <p className="hero-subtitle">
             TRUST IS RARE, DHOKHA EVERYWHERE.
             <br />
-            THE ESTATE IS CALLING. WILL YOU ANSWER?
+            AN IMMERSIVE 2-DAY ESCAPE TO THE HILLS.
           </p>
 
           <div className="hero-details">
-
             <span>
-              <span className="detail-icon">
-                ▣
-              </span>
-              24-25 OCTOBER, 2026
+              <span className="detail-icon">▣</span>
+              OCTOBER 24–25, 2026
             </span>
 
             <span className="detail-divider"></span>
 
             <span>
-              <span className="detail-icon">
-                ◆
-              </span>
-              A PRIVATE MANSION
+              <span className="detail-icon">◆</span>
+              SECRET HILL DESTINATION
             </span>
 
             <span className="detail-divider"></span>
 
             <span>
-              <span className="detail-icon">
-                ◈
-              </span>
-              ₹6,000 / PERSON
+              <span className="detail-icon">◈</span>
+              20 STRANGERS
             </span>
-
           </div>
 
-          <a
-            href={GOOGLE_FORM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="gold-button hero-button"
-          >
-            REQUEST ENTRY
-          </a>
+          <div className="hero-cta-wrap">
+            <a
+              href={GOOGLE_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="gold-button hero-button"
+            >
+              READY TO PLAY?
+            </a>
+          </div>
 
           <div className="hero-limited">
-            LIMITED TO 20 PLAYERS ONLY · 24-25 OCTOBER, 2026
+            LIMITED TO 20 PLAYERS ONLY · APPLICATION & SCREENING OPEN
           </div>
-
         </div>
-
       </section>
 
 
       {/* =====================================================
-          2. WHAT IS THE ESTATE?
+          2. THE CATCH (SECRET LOCATION)
       ===================================================== */}
 
       <section
-        id="what-is-this"
-        className="section what-section"
-        style={{
-          backgroundImage: `url("${IMG}/masked-hero.png")`,
-        }}
-      >
-
-        <img
-          className="section-bg-image"
-          src={`${IMG}/masked-hero.png`}
-          alt="The Estate Atmosphere"
-        />
-
-        <div className="section-overlay"></div>
-
-        <div className="what-content">
-
-          <div className="section-number">
-            1.
-          </div>
-
-          <div className="section-heading">
-            WHAT IS THE TRAITORS MUMBAI?
-          </div>
-
-          <div className="gold-line"></div>
-
-          <p>
-            The Traitors Mumbai is an exclusive real-life psychological game
-            <br />
-            of trust, strategy, alliances and deception.
-          </p>
-
-          <p>
-            20 handpicked players enter a private estate. Some are loyal. Some are traitors.
-            <br />
-            Your mission is simple: uncover the truth and survive.
-          </p>
-
-          <p className="strong-line">
-            Trust no one.
-          </p>
-
-        </div>
-
-        <div className="what-decoration">
-
-          <div className="coin-symbol">
-            T
-          </div>
-
-        </div>
-
-      </section>
-
-
-      {/* =====================================================
-          3. HOW IT WORKS
-      ===================================================== */}
-
-      <section
-        id="how-it-works"
-        className="section how-section"
-        style={{
-          backgroundImage: `url("${IMG}/sword.png")`,
-        }}
-      >
-
-        <img
-          className="section-bg-image"
-          src={`${IMG}/sword.png`}
-          alt="Sword of The Estate"
-        />
-
-        <div className="section-overlay dark-overlay"></div>
-
-        <div className="how-inner">
-
-          <div className="center-title">
-
-            <div className="section-number">
-              2.
-            </div>
-
-            <h2>
-              HOW IT WORKS
-            </h2>
-
-            <div className="gold-line center"></div>
-
-          </div>
-
-
-          <div className="steps">
-
-            <Step
-              icon="♟"
-              title="20 PLAYERS"
-              text="20 handpicked players enter the private estate."
-            />
-
-            <div className="step-arrow">
-              →
-            </div>
-
-            <Step
-              icon="♠"
-              title="LOYALS & TRAITORS"
-              text="A secret few are chosen as traitors in the shadows."
-            />
-
-            <div className="step-arrow">
-              →
-            </div>
-
-            <Step
-              icon="♜"
-              title="COMPLETE MISSIONS"
-              text="Work together, tackle challenges, unlock hidden clues."
-            />
-
-            <div className="step-arrow">
-              →
-            </div>
-
-            <Step
-              icon="⚔"
-              title="BETRAY OR SURVIVE"
-              text="Unmask the traitors before you are eliminated."
-            />
-
-            <div className="step-arrow">
-              →
-            </div>
-
-            <Step
-              icon="♛"
-              title="THE FINALE"
-              text="Form alliances, survive the council, conquer the mystery."
-            />
-
-          </div>
-
-        </div>
-
-
-        <img
-          className="shield-decoration"
-          src={`${IMG}/shield.png`}
-          alt="Shield of The Estate"
-        />
-
-      </section>
-
-
-      {/* =====================================================
-          4. THE EXPERIENCE
-      ===================================================== */}
-
-      <section
-        id="experience"
-        className="section experience-section"
+        id="the-catch"
+        className="section catch-section"
         style={{
           backgroundImage: `url("${IMG}/mansion.png")`,
         }}
       >
-
         <img
           className="section-bg-image"
           src={`${IMG}/mansion.png`}
-          alt="The Mansion"
+          alt="Secret Estate in the Hills"
         />
 
-        <div className="section-overlay experience-overlay"></div>
+        <div className="section-overlay dark-overlay"></div>
 
-        <div className="experience-content">
-
+        <div className="catch-content">
           <div className="section-number">
-            3.
+            01.
           </div>
 
-          <h2>
-            THE EXPERIENCE
+          <h2 className="section-heading">
+            YOU WON'T KNOW WHERE YOU'RE GOING.
           </h2>
 
           <div className="gold-line"></div>
 
-          <div className="experience-list">
+          <p className="lead-story-text">
+            We’re taking <strong>20 strangers</strong> on a 2-day escape to the hills.
+            <br />
+            There’s just one catch — you won’t know where you’re going until it’s time to go.
+          </p>
 
-            <ExperienceItem
-              icon="♜"
-              title="A LUXURIOUS PRIVATE MANSION"
-              text="An exclusive private estate serving as your home and battleground for 2 thrilling days."
-            />
-
-            <ExperienceItem
-              icon="♨"
-              title="FOOD & ACCOMMODATION INCLUDED"
-              text="Full 2-day stay with breakfast, dinner, and comfortable private lodging."
-            />
-
-            <ExperienceItem
-              icon="♟"
-              title="IMMERSIVE GAMEPLAY & MISSIONS"
-              text="Secret roles, psychological twists, strategic alliances, and mystery challenges."
-            />
-
-            <ExperienceItem
-              icon="♠"
-              title="CINEMATIC ATMOSPHERE"
-              text="Every candle, mask, and room designed to deliver an unforgettable luxury experience."
-            />
-
+          <div className="safe-card">
+            <div className="safe-icon">🛡️</div>
+            <div className="safe-text">
+              <strong>DON'T WORRY — YOU'RE IN SAFE HANDS.</strong>
+              <p>
+                This isn’t a sketchy mystery trip. You’re in safe, experienced hands with the hosts every step of the journey.
+              </p>
+            </div>
           </div>
 
+          <p className="catch-climax-text">
+            The location is secret because we want the whole weekend to feel like stepping into a real life game.
+          </p>
         </div>
 
+        <div className="what-decoration">
+          <div className="coin-symbol">
+            T
+          </div>
+        </div>
       </section>
 
 
       {/* =====================================================
-          5. THE RULES
+          3. "THINK..." THE EXPERIENCE
+      ===================================================== */}
+
+      <section
+        id="the-game"
+        className="section game-elements-section"
+        style={{
+          backgroundImage: `url("${IMG}/sword.png")`,
+        }}
+      >
+        <img
+          className="section-bg-image"
+          src={`${IMG}/sword.png`}
+          alt="Sword of Mystery"
+        />
+
+        <div className="section-overlay dark-overlay"></div>
+
+        <div className="game-elements-inner">
+          <div className="center-title">
+            <div className="section-number">
+              02.
+            </div>
+
+            <h2>
+              THINK...
+            </h2>
+
+            <div className="gold-line center"></div>
+
+            <p className="section-subtext">
+              What waits behind the closed doors of the Estate.
+            </p>
+          </div>
+
+          <div className="elements-grid">
+            <div className="element-card">
+              <span className="element-badge">01</span>
+              <div className="element-icon">♟</div>
+              <h3>GAMES</h3>
+              <p>High-stakes social strategy, psychological mind games, and thrilling deception.</p>
+            </div>
+
+            <div className="element-card">
+              <span className="element-badge">02</span>
+              <div className="element-icon">⚔</div>
+              <h3>CHALLENGES</h3>
+              <p>Physical & mental trials where players must cooperate — but watch their backs.</p>
+            </div>
+
+            <div className="element-card">
+              <span className="element-badge">03</span>
+              <div className="element-icon">🎭</div>
+              <h3>SURPRISES</h3>
+              <p>Hidden plot twists, sudden revelations, and midnight mission turns.</p>
+            </div>
+
+            <div className="element-card">
+              <span className="element-badge">04</span>
+              <div className="element-icon">🗝</div>
+              <h3>SECRETS</h3>
+              <p>Whispered conspiracies, secret identities, and unmasking the unseen.</p>
+            </div>
+
+            <div className="element-card element-chaos">
+              <span className="element-badge">05</span>
+              <div className="element-icon">⚡</div>
+              <h3>CHAOS</h3>
+              <p>And a little bit of chaos. Because in this house, nobody knows who to trust.</p>
+            </div>
+          </div>
+        </div>
+
+        <img
+          className="shield-decoration"
+          src={`${IMG}/shield.png`}
+          alt="Shield of The Traitors"
+        />
+      </section>
+
+
+      {/* =====================================================
+          4. WHAT'S INCLUDED
+      ===================================================== */}
+
+      <section
+        id="included"
+        className="section included-section"
+        style={{
+          backgroundImage: `url("${IMG}/traitors-group.png")`,
+        }}
+      >
+        <img
+          className="section-bg-image"
+          src={`${IMG}/traitors-group.png`}
+          alt="The Group Stay"
+        />
+
+        <div className="section-overlay experience-overlay"></div>
+
+        <div className="included-inner">
+          <div className="center-title">
+            <div className="section-number">
+              03.
+            </div>
+
+            <h2>
+              WHAT'S INCLUDED
+            </h2>
+
+            <div className="gold-line center"></div>
+
+            <div className="stay-pricing-badge">
+              <span className="stay-price">₹6,000</span>
+              <span className="stay-per">PER PERSON · ALL-INCLUSIVE PASS</span>
+            </div>
+          </div>
+
+          <div className="included-grid">
+            <div className="included-card">
+              <div className="included-icon">🏰</div>
+              <div className="included-body">
+                <h3>Stay at a beautiful property amidst nature</h3>
+                <p>An exclusive secluded estate nestled in the hills, away from the city chaos.</p>
+              </div>
+            </div>
+
+            <div className="included-card">
+              <div className="included-icon">🍷</div>
+              <div className="included-body">
+                <h3>Breakfast & Dinner</h3>
+                <p>Curated meals and dining provided across both days of your stay.</p>
+              </div>
+            </div>
+
+            <div className="included-card">
+              <div className="included-icon">🎭</div>
+              <div className="included-body">
+                <h3>Games, challenges & unexpected twists</h3>
+                <p>Full immersive gameplay, customized missions, clues, masks, and secret kits.</p>
+              </div>
+            </div>
+
+            <div className="included-card">
+              <div className="included-icon">👥</div>
+              <div className="included-body">
+                <h3>20 strangers who might not be strangers by the end</h3>
+                <p>A handpicked mix of adventurous minds ready for an unforgettable weekend.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* =====================================================
+          5. THE RULES ARE SIMPLE
       ===================================================== */}
 
       <section
         id="rules"
         className="section rules-section"
         style={{
-          backgroundImage: `url("${IMG}/traitors-group.png")`,
+          backgroundImage: `url("${IMG}/sword.png")`,
         }}
       >
-
         <img
           className="section-bg-image"
-          src={`${IMG}/traitors-group.png`}
-          alt="Traitors Group"
+          src={`${IMG}/sword.png`}
+          alt="Rules Sword"
         />
 
         <div className="section-overlay rules-overlay"></div>
 
         <div className="rules-inner">
-
           <div className="center-title">
-
             <div className="section-number">
-              4.
+              04.
             </div>
 
             <h2>
-              THE RULES
+              THE RULES ARE SIMPLE.
             </h2>
 
             <div className="gold-line center"></div>
 
+            <p className="section-subtext">
+              Enter with an open mind. Play with sharp instincts.
+            </p>
           </div>
 
+          <div className="rules-simple-grid">
+            <div className="rule-simple-card">
+              <span className="rule-idx">01</span>
+              <h3>COME ALONE.</h3>
+              <p>Leave your routine and your comfort zone behind. True immersion begins solo.</p>
+            </div>
 
-          <div className="rules-grid">
+            <div className="rule-simple-card">
+              <span className="rule-idx">02</span>
+              <h3>TRUST THE HOSTS.</h3>
+              <p>You are in safe, curated hands. Follow the guidance of the Estate Masters.</p>
+            </div>
 
-            <Rule
-              icon="◈"
-              title="DON'T REVEAL YOUR ROLE"
-              text="Your secret identity is your greatest shield."
-            />
+            <div className="rule-simple-card">
+              <span className="rule-idx">03</span>
+              <h3>PLAY YOUR PART.</h3>
+              <p>Commit to your identity, tackle every challenge, and dive into the mystery.</p>
+            </div>
 
-            <Rule
-              icon="◉"
-              title="LISTEN CAREFULLY"
-              text="Subtle clues and quiet lies are hidden everywhere."
-            />
-
-            <Rule
-              icon="◉"
-              title="TRUST WISELY"
-              text="Alliances can protect you or seal your downfall."
-            />
-
-            <Rule
-              icon="♟"
-              title="COMPLETE MISSIONS"
-              text="Cooperate in team challenges, but stay alert."
-            />
-
-            <Rule
-              icon="♠"
-              title="BETRAY OR BE BETRAYED"
-              text="In The Estate, survival demands strategy."
-            />
-
+            <div className="rule-simple-card rule-danger">
+              <span className="rule-idx">04</span>
+              <h3>DON'T ASSUME EVERYONE IS TELLING THE TRUTH.</h3>
+              <p>Alliances will form, whispers will spread, and dhokha is everywhere.</p>
+            </div>
           </div>
-
         </div>
-
       </section>
 
 
       {/* =====================================================
-          6. THE STAY / EXPERIENCE DETAILS
+          6. DON'T BRING YOUR FRIENDS (COME ALONE)
       ===================================================== */}
 
       <section
-        id="stay"
-        className="section stay-section"
+        id="come-alone"
+        className="section come-alone-section"
         style={{
-          backgroundImage: `url("${IMG}/sword.png")`,
+          backgroundImage: `url("${IMG}/masked-hero.png")`,
         }}
       >
-
         <img
           className="section-bg-image"
-          src={`${IMG}/sword.png`}
-          alt="The Estate Stay"
+          src={`${IMG}/masked-hero.png`}
+          alt="Masked Player"
         />
 
-        <div className="section-overlay stay-overlay"></div>
+        <div className="section-overlay dark-overlay"></div>
 
-        <div className="stay-content">
-
+        <div className="come-alone-content">
           <div className="section-number">
-            5.
+            05.
+          </div>
+
+          <h2 className="section-heading">
+            DON'T BRING YOUR FRIENDS.
+          </h2>
+
+          <div className="gold-line"></div>
+
+          <div className="come-alone-body">
+            <p className="highlight-quote">
+              You don’t need to convince your friends to come.
+              <br />
+              <span className="gold-text">In fact, we’d rather you didn’t.</span>
+            </p>
+
+            <p className="narrative-p">
+              The whole point is to arrive knowing nobody and leave with a whole new group.
+            </p>
+
+            <div className="social-philosophy-card">
+              <div className="philosophy-icon">♛</div>
+              <p>
+                When everybody arrives as a stranger, there are no preexisting cliques and no inside jokes. Everyone starts on equal ground — open to genuine connections, thrilling alliances, and unfiltered game dynamics.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* =====================================================
+          7. TWO DAYS. NO ROUTINE.
+      ===================================================== */}
+
+      <section
+        id="no-routine"
+        className="section routine-section"
+        style={{
+          backgroundImage: `url("${IMG}/mansion.png")`,
+        }}
+      >
+        <img
+          className="section-bg-image"
+          src={`${IMG}/mansion.png`}
+          alt="Secluded Mansion"
+        />
+
+        <div className="section-overlay experience-overlay"></div>
+
+        <div className="routine-content">
+          <div className="section-number">
+            06.
           </div>
 
           <h2>
-            THE STAY & DETAILS
+            TWO DAYS. NO ROUTINE.
           </h2>
 
           <div className="gold-line center"></div>
 
-          <div className="stay-pricing-badge">
-            <span className="stay-price">₹6,000</span>
-            <span className="stay-per">PER PERSON · ALL-INCLUSIVE</span>
+          <div className="routine-quote-box">
+            <p className="routine-quote-main">
+              “For two days, forget your usual plans,
+              <br />
+              step away from your routine
+              <br />
+              and let us take care of the rest.”
+            </p>
+
+            <div className="routine-chips">
+              <span>✦ Secluded Estate</span>
+              <span>✦ Nature & Fresh Air</span>
+              <span>✦ 24-25 October, 2026</span>
+              <span>✦ 20 Strangers</span>
+            </div>
           </div>
-
-          <p className="stay-summary-text">
-            20 PLAYERS · 2 FULL DAYS (24-25 OCTOBER, 2026) · 1 PRIVATE MANSION
-          </p>
-
-          <div className="stay-inclusions-grid">
-
-            <div className="stay-inclusion-card">
-              <span className="inclusion-icon">🏰</span>
-              <h3>2-Day Private Estate Stay</h3>
-              <p>Exclusive access to a luxury private mansion & grounds</p>
-            </div>
-
-            <div className="stay-inclusion-card">
-              <span className="inclusion-icon">🍷</span>
-              <h3>Food & Dining</h3>
-              <p>Curated breakfast & dinner included across both days</p>
-            </div>
-
-            <div className="stay-inclusion-card">
-              <span className="inclusion-icon">🎭</span>
-              <h3>The Immersive Game</h3>
-              <p>Full psychological game, customized missions & twists</p>
-            </div>
-
-            <div className="stay-inclusion-card">
-              <span className="inclusion-icon">⚔️</span>
-              <h3>All Game Materials</h3>
-              <p>Shields, masks, clues, strategy kits & themed activities</p>
-            </div>
-
-          </div>
-
         </div>
-
       </section>
 
 
       {/* =====================================================
-          7. TAKE PART
+          8. FINAL CTA
       ===================================================== */}
 
       <section
@@ -557,7 +541,6 @@ function App() {
           backgroundImage: `url("${IMG}/traitors-group.png")`,
         }}
       >
-
         <img
           className="section-bg-image"
           src={`${IMG}/traitors-group.png`}
@@ -567,79 +550,62 @@ function App() {
         <div className="section-overlay take-part-overlay"></div>
 
         <div className="take-part-inner">
-
           <div className="section-number">
-            6.
+            07.
           </div>
 
           <h2>
-            REQUEST ENTRY
+            READY TO PLAY?
           </h2>
 
           <div className="gold-line center"></div>
 
           <div className="entry-card">
-
             <div className="entry-column">
-
               <span className="entry-label">
-                EXPERIENCE FEE
+                EXPERIENCE PASS
               </span>
-
               <span className="entry-price">
                 ₹6,000
               </span>
-
               <span className="entry-note">
-                PER PERSON · STAY & GAME
+                PER PERSON · STAY, MEALS & GAME
               </span>
-
             </div>
 
-
             <div className="entry-middle">
-
               <a
                 href={GOOGLE_FORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="gold-button"
               >
-                REQUEST ENTRY
+                TAKE PART — APPLY NOW
               </a>
 
               <span>
-                LIMITED TO 20 PLAYERS · 24-25 OCTOBER, 2026
+                20 STRANGERS · 2 DAYS · 1 SECRET DESTINATION
               </span>
-
             </div>
 
-
             <div className="entry-column">
-
               <span className="entry-label">
                 CAPACITY
               </span>
-
               <span className="entry-price">
                 20
               </span>
-
               <span className="entry-note">
-                PLAYERS ONLY
+                PLAYERS ONLY · OCT 24-25
               </span>
-
             </div>
-
           </div>
-
         </div>
-
       </section>
 
 
       {/* =====================================================
-          8. FAQ
+          9. FAQ
       ===================================================== */}
 
       <section
@@ -649,7 +615,6 @@ function App() {
           backgroundImage: `url("${IMG}/traitors-group.png")`,
         }}
       >
-
         <img
           className="section-bg-image faq-bg-image"
           src={`${IMG}/traitors-group.png`}
@@ -659,11 +624,9 @@ function App() {
         <div className="faq-overlay"></div>
 
         <div className="faq-content">
-
           <div className="faq-title">
-
             <span className="section-number">
-              7.
+              08.
             </span>
 
             <h2>
@@ -671,76 +634,64 @@ function App() {
             </h2>
 
             <div className="gold-line center"></div>
-
           </div>
-
 
           <div className="faq-grid">
-
             <FAQ
-              question="What is The Estate?"
-              answer="The Estate is a premium 2-day immersive psychological social-deduction game experience for 20 players set inside a private luxury mansion."
+              question="What is The Traitors Mumbai?"
+              answer="We’re taking 20 strangers on a 2-day escape to the hills for an immersive weekend of games, challenges, surprises, secrets, and a little bit of chaos."
             />
 
             <FAQ
-              question="Who can participate?"
-              answer="Anyone aged 18 and above who enjoys strategy, mystery, deception games, and meeting new people. No prior experience is required."
+              question="Why is the location secret?"
+              answer="You won’t know where you’re going until it’s time to go. The location is secret because we want the whole weekend to feel like stepping into a real-life game. The property is a beautiful, safe private estate amidst nature in the hills."
             />
 
             <FAQ
-              question="How many players are there?"
-              answer="Each edition is strictly limited to 20 handpicked players to ensure deep immersion and high-stakes social dynamics."
+              question="Is it safe if I'm coming alone?"
+              answer="100% safe. You are in safe, verified hands with the hosts. In fact, coming alone is the core rule — you arrive knowing nobody and leave with a whole new group of friends."
             />
 
             <FAQ
-              question="What does the ₹6,000 entry include?"
-              answer="The ₹6,000 fee includes your full 2-day stay at the private estate, accommodation, breakfast and dinner, all immersive game activities, missions, and props."
+              question="What does the ₹6,000 pass include?"
+              answer="It includes your 2-day stay at a beautiful property amidst nature, breakfast & dinner across both days, and all games, challenges, missions, and unexpected twists."
             />
 
             <FAQ
-              question="When and how long is the experience?"
-              answer="The experience takes place on 24-25 October, 2026 (2 full days and 1 night of non-stop immersion, mystery, and strategy)."
+              question="When is the trip taking place?"
+              answer="October 24–25, 2026 (Saturday morning to Sunday evening)."
             />
 
             <FAQ
-              question="Where will it take place?"
-              answer="At an exclusive private mansion near Mumbai. The exact location details are shared directly with confirmed participants."
+              question="Can I come with my friends?"
+              answer="You don’t need to convince your friends to come — in fact, we’d rather you didn’t! The magic of the experience is that everyone arrives solo as strangers."
             />
 
             <FAQ
-              question="Is accommodation included?"
-              answer="Yes, comfortable private lodging inside the estate for the entire duration of the experience is fully included."
+              question="How are the 20 players chosen?"
+              answer="Interested participants submit their application through our form. Our hosts review entries to ensure a balanced, fun, and safe group of 20 players."
             />
 
             <FAQ
-              question="What happens after I request entry?"
-              answer="Our team reviews all entry requests and reaches out directly to selected participants regarding confirmation and next steps."
+              question="What happens after I apply?"
+              answer="Our team reviews all entries. Selected participants will be contacted directly via WhatsApp/Call with confirmation, travel coordinates, and next steps."
             />
-
-            <FAQ
-              question="Is the entry automatically confirmed?"
-              answer="No. Requesting entry registers your interest. Because seats are strictly capped at 20, entries are reviewed and confirmed manually."
-            />
-
           </div>
-
         </div>
-
       </section>
 
 
       {/* =====================================================
-          FOOTER
+          10. INSTAGRAM & FOOTER
       ===================================================== */}
 
       <footer className="footer">
-
         <div className="footer-estate-brand">
           <div className="footer-brand-title">
             THE TRAITORS MUMBAI
           </div>
           <div className="footer-brand-sub">
-            TRUST IS RARE, DHOKHA EVERYWHERE · 20 PLAYERS • 24-25 OCTOBER, 2026
+            TRUST IS RARE, DHOKHA EVERYWHERE · 20 STRANGERS · OCTOBER 24–25, 2026
           </div>
           <div className="footer-copy">
             © 2026 The Traitors Mumbai. All rights reserved.
@@ -749,7 +700,7 @@ function App() {
 
         <div className="footer-info-group">
           <div className="footer-contact-block">
-            <span className="footer-section-label">CONTACT</span>
+            <span className="footer-section-label">HOST / CONTACT</span>
             <div className="footer-contact-name">Sanskar Pandey</div>
             <a href="tel:+919372948245" className="footer-contact-link">
               +91 9372948245
@@ -757,18 +708,17 @@ function App() {
           </div>
 
           <div className="footer-social-block">
-            <span className="footer-section-label">INSTAGRAM</span>
+            <span className="footer-section-label">FOLLOW THE GAME</span>
             <a
-              href="https://www.instagram.com/the_estate__/"
+              href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="footer-instagram-link"
             >
-              @the_estate__
+              @the_traitors_mumbai
             </a>
           </div>
         </div>
-
       </footer>
 
     </div>
@@ -780,90 +730,18 @@ function App() {
    COMPONENTS
    ========================================================= */
 
-function Step({ icon, title, text }) {
-  return (
-    <div className="step">
-
-      <div className="step-icon">
-        {icon}
-      </div>
-
-      <h3>
-        {title}
-      </h3>
-
-      <p>
-        {text}
-      </p>
-
-    </div>
-  );
-}
-
-
-function ExperienceItem({ icon, title, text }) {
-  return (
-    <div className="experience-item">
-
-      <div className="experience-icon">
-        {icon}
-      </div>
-
-      <div>
-        <h3>
-          {title}
-        </h3>
-
-        <p>
-          {text}
-        </p>
-      </div>
-
-    </div>
-  );
-}
-
-
-function Rule({ icon, title, text }) {
-  return (
-    <div className="rule">
-
-      <div className="rule-icon">
-        {icon}
-      </div>
-
-      <h3>
-        {title}
-      </h3>
-
-      <p>
-        {text}
-      </p>
-
-    </div>
-  );
-}
-
-
 function FAQ({ question, answer }) {
   return (
     <details className="faq-item">
-
       <summary>
         {question}
-
-        <span>
-          +
-        </span>
+        <span>+</span>
       </summary>
-
       <p>
         {answer}
       </p>
-
     </details>
   );
 }
-
 
 export default App;

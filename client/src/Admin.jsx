@@ -2,9 +2,9 @@ import React, { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import "./Admin.css";
 
-const API_ROOT = (import.meta.env.VITE_API_URL || "http://localhost:5050").replace(/\/+$/, "");
-const API_BASE = `${API_ROOT}/api/players`;
-const AUTH_URL = `${API_ROOT}/api/auth/login`;
+const API_ROOT = (import.meta.env.VITE_API_URL || "").replace(/\/+$/, "");
+const API_BASE = API_ROOT ? `${API_ROOT}/api/players` : "";
+const AUTH_URL = API_ROOT ? `${API_ROOT}/api/auth/login` : "";
 
 function Admin() {
   const [token, setToken] = useState(() => {
@@ -31,6 +31,10 @@ function Admin() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    if (!API_ROOT) {
+      setAuthError("All applications are currently processed via the official Google Form. Backend database is offline.");
+      return;
+    }
     if (!username.trim() || !password) {
       setAuthError("Please enter both username and password.");
       return;
