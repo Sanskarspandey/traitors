@@ -518,10 +518,12 @@ button {
   line-height: 1.4;
 }
 
-.hero-content h1 {
+.hero-title,
+.hero-content h1,
+.hero-content .hero-title {
   font-size: clamp(38px, 8.5vw, 92px);
   line-height: 1.05;
-  color: var(--gold-light);
+  color: #e0c27c !important;
   margin: 0 0 20px;
   letter-spacing: clamp(2px, 0.6vw, 4px);
   font-weight: 700;

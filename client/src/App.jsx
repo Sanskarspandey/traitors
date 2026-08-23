@@ -235,7 +235,7 @@ function App() {
             20 STRANGERS · 2-DAY ESCAPE · SECRET DESTINATION · OCTOBER 24–25, 2026
           </div>
 
-          <h1>
+          <h1 className="hero-title">
             THE TRAITORS
             <br />
             MUMBAI
