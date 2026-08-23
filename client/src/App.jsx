@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./App.css";
 
@@ -7,11 +7,37 @@ const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf0W9L1Jrk8_gJ
 const INSTAGRAM_URL = "https://www.instagram.com/the_traitors_mumbai/";
 
 function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const scrollToSection = (id) => {
-    document.getElementById(id)?.scrollIntoView({
-      behavior: "smooth",
-    });
+    setIsMenuOpen(false);
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
   };
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setIsMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isMenuOpen]);
 
   return (
     <div className="estate-page">
@@ -20,56 +46,168 @@ function App() {
           NAVBAR
       ===================================================== */}
 
-      <header className="navbar">
-        <div
-          className="brand"
-          onClick={() => scrollToSection("home")}
-        >
-          <div className="brand-symbol">
-            ♛
-          </div>
-          <div>
-            <div className="brand-name">
-              THE TRAITORS MUMBAI
+      <header className={`navbar ${isMenuOpen ? "menu-active" : ""}`}>
+        <div className="navbar-container">
+          <div
+            className="brand"
+            onClick={() => scrollToSection("home")}
+            role="button"
+            tabIndex={0}
+            aria-label="The Traitors Mumbai Home"
+          >
+            <div className="brand-symbol">
+              ♛
             </div>
-            <div className="brand-tagline">
-              TRUST IS RARE, DHOKHA EVERYWHERE
+            <div className="brand-text">
+              <div className="brand-name">
+                THE TRAITORS MUMBAI
+              </div>
+              <div className="brand-tagline">
+                TRUST IS RARE, DHOKHA EVERYWHERE
+              </div>
+            </div>
+          </div>
+
+          <nav className="nav-links desktop-only" aria-label="Main Navigation">
+            <button type="button" onClick={() => scrollToSection("home")}>
+              HOME
+            </button>
+            <button type="button" onClick={() => scrollToSection("the-catch")}>
+              THE CATCH
+            </button>
+            <button type="button" onClick={() => scrollToSection("the-game")}>
+              THE GAME
+            </button>
+            <button type="button" onClick={() => scrollToSection("included")}>
+              WHAT'S INCLUDED
+            </button>
+            <button type="button" onClick={() => scrollToSection("rules")}>
+              THE RULES
+            </button>
+            <button type="button" onClick={() => scrollToSection("come-alone")}>
+              COME ALONE
+            </button>
+            <button type="button" onClick={() => scrollToSection("faq")}>
+              FAQ
+            </button>
+          </nav>
+
+          <a
+            href={GOOGLE_FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-take-part desktop-only"
+          >
+            TAKE PART
+          </a>
+
+          {/* Mobile Menu Toggle Button */}
+          <button
+            type="button"
+            className={`menu-toggle-btn mobile-only ${isMenuOpen ? "open" : ""}`}
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+            aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu-overlay"
+          >
+            <span className="hamburger-box">
+              <span className="hamburger-line line-1"></span>
+              <span className="hamburger-line line-2"></span>
+              <span className="hamburger-line line-3"></span>
+            </span>
+          </button>
+        </div>
+
+        {/* Mobile Navigation Drawer / Overlay */}
+        <div
+          id="mobile-menu-overlay"
+          className={`mobile-menu-overlay ${isMenuOpen ? "open" : ""}`}
+          aria-hidden={!isMenuOpen}
+        >
+          <div
+            className="mobile-menu-backdrop"
+            onClick={() => setIsMenuOpen(false)}
+          ></div>
+
+          <div className="mobile-menu-drawer">
+            <div className="mobile-menu-header">
+              <div className="mobile-menu-brand" onClick={() => scrollToSection("home")}>
+                <span className="menu-crest">♛</span>
+                <span>THE TRAITORS</span>
+              </div>
+              <button
+                type="button"
+                className="mobile-close-btn"
+                onClick={() => setIsMenuOpen(false)}
+                aria-label="Close menu"
+              >
+                ✕
+              </button>
+            </div>
+
+            <div className="mobile-menu-divider"></div>
+
+            <nav className="mobile-nav-list" aria-label="Mobile Navigation">
+              <button type="button" onClick={() => scrollToSection("home")}>
+                <span className="nav-num">I.</span>
+                <span className="nav-title">HOME</span>
+              </button>
+              <button type="button" onClick={() => scrollToSection("the-catch")}>
+                <span className="nav-num">II.</span>
+                <span className="nav-title">THE CATCH</span>
+              </button>
+              <button type="button" onClick={() => scrollToSection("the-game")}>
+                <span className="nav-num">III.</span>
+                <span className="nav-title">THE GAME</span>
+              </button>
+              <button type="button" onClick={() => scrollToSection("included")}>
+                <span className="nav-num">IV.</span>
+                <span className="nav-title">WHAT'S INCLUDED</span>
+              </button>
+              <button type="button" onClick={() => scrollToSection("rules")}>
+                <span className="nav-num">V.</span>
+                <span className="nav-title">THE RULES</span>
+              </button>
+              <button type="button" onClick={() => scrollToSection("come-alone")}>
+                <span className="nav-num">VI.</span>
+                <span className="nav-title">COME ALONE</span>
+              </button>
+              <button type="button" onClick={() => scrollToSection("faq")}>
+                <span className="nav-num">VII.</span>
+                <span className="nav-title">FAQ</span>
+              </button>
+            </nav>
+
+            <div className="mobile-menu-cta-wrap">
+              <a
+                href={GOOGLE_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="gold-button mobile-menu-cta"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                TAKE PART — APPLICATION →
+              </a>
+            </div>
+
+            <div className="mobile-menu-footer">
+              <div className="mobile-social-link">
+                <span className="menu-foot-label">FOLLOW THE GAME</span>
+                <a
+                  href={INSTAGRAM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="menu-instagram"
+                >
+                  @the_traitors_mumbai ↗
+                </a>
+              </div>
+              <div className="mobile-contact-line">
+                <span>Host / Queries: +91 9372948245</span>
+              </div>
             </div>
           </div>
         </div>
-
-        <nav className="nav-links">
-          <button onClick={() => scrollToSection("home")}>
-            HOME
-          </button>
-          <button onClick={() => scrollToSection("the-catch")}>
-            THE CATCH
-          </button>
-          <button onClick={() => scrollToSection("the-game")}>
-            THE GAME
-          </button>
-          <button onClick={() => scrollToSection("included")}>
-            WHAT'S INCLUDED
-          </button>
-          <button onClick={() => scrollToSection("rules")}>
-            THE RULES
-          </button>
-          <button onClick={() => scrollToSection("come-alone")}>
-            COME ALONE
-          </button>
-          <button onClick={() => scrollToSection("faq")}>
-            FAQ
-          </button>
-        </nav>
-
-        <a
-          href={GOOGLE_FORM_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="nav-take-part"
-        >
-          TAKE PART
-        </a>
       </header>
 
 
@@ -110,21 +248,21 @@ function App() {
           </p>
 
           <div className="hero-details">
-            <span>
+            <span className="hero-detail-item">
               <span className="detail-icon">▣</span>
               OCTOBER 24–25, 2026
             </span>
 
             <span className="detail-divider"></span>
 
-            <span>
+            <span className="hero-detail-item">
               <span className="detail-icon">◆</span>
               SECRET HILL DESTINATION
             </span>
 
             <span className="detail-divider"></span>
 
-            <span>
+            <span className="hero-detail-item">
               <span className="detail-icon">◈</span>
               20 STRANGERS
             </span>
@@ -521,8 +659,8 @@ function App() {
 
             <div className="routine-chips">
               <span>✦ Secluded Estate</span>
-              <span>✦ Nature & Fresh Air</span>
-              <span>✦ 24-25 October, 2026</span>
+              <span>✦ Nature & Hills</span>
+              <span>✦ Oct 24-25, 2026</span>
               <span>✦ 20 Strangers</span>
             </div>
           </div>
