@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import "./App.css";
 
 const IMG = `${import.meta.env.BASE_URL || "/"}images`.replace(/\/\/+/g, "/");
+const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf0W9L1Jrk8_gJhqriE0zBwZ5xYP7SZFm1BtojvByX9gTB5rg/viewform";
 const INSTAGRAM_URL = "https://www.instagram.com/the_traitors_mumbai/";
 const CONTACT_PHONE = "+91 9372948245";
-const BOOKING_WHATSAPP = "https://wa.me/919372948245?text=Hi%20Sanskar%2C%20I%20want%20to%20book%20my%20ticket%20for%20The%20Estate%20at%20Boxtel%20Lonavala%20%28October%2010-12%29.";
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -54,14 +54,14 @@ function App() {
             onClick={() => scrollToSection("home")}
             role="button"
             tabIndex={0}
-            aria-label="The Estate Home"
+            aria-label="The Traitors Mumbai Home"
           >
             <div className="brand-symbol">
               ♛
             </div>
             <div className="brand-text">
               <div className="brand-name">
-                THE ESTATE
+                THE TRAITORS MUMBAI
               </div>
               <div className="brand-tagline">
                 TRUST IS RARE, DHOKHA EVERYWHERE
@@ -96,13 +96,14 @@ function App() {
             </button>
           </nav>
 
-          <button
-            type="button"
-            onClick={() => scrollToSection("take-part")}
+          <a
+            href={GOOGLE_FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="nav-take-part desktop-only"
           >
             TAKE PART
-          </button>
+          </a>
 
           {/* Mobile Menu Toggle Button */}
           <button
@@ -136,7 +137,7 @@ function App() {
             <div className="mobile-menu-header">
               <div className="mobile-menu-brand" onClick={() => scrollToSection("home")}>
                 <span className="menu-crest">♛</span>
-                <span>THE ESTATE</span>
+                <span>THE TRAITORS</span>
               </div>
               <button
                 type="button"
@@ -186,18 +187,20 @@ function App() {
             </nav>
 
             <div className="mobile-menu-cta-wrap">
-              <button
-                type="button"
+              <a
+                href={GOOGLE_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="gold-button mobile-menu-cta"
-                onClick={() => scrollToSection("take-part")}
+                onClick={() => setIsMenuOpen(false)}
               >
                 TAKE PART →
-              </button>
+              </a>
             </div>
 
             <div className="mobile-menu-footer">
               <div className="mobile-social-link">
-                <span className="menu-foot-label">FOLLOW THE ESTATE</span>
+                <span className="menu-foot-label">FOLLOW THE GAME</span>
                 <a
                   href={INSTAGRAM_URL}
                   target="_blank"
@@ -230,7 +233,7 @@ function App() {
         <img
           className="section-bg-image hero-bg-image"
           src={`${IMG}/masked-hero.png`}
-          alt="The Estate Masked Figure"
+          alt="The Traitors Mumbai Figure"
         />
 
         <div className="hero-overlay"></div>
@@ -241,7 +244,9 @@ function App() {
           </div>
 
           <h1 className="hero-title">
-            THE ESTATE
+            THE TRAITORS
+            <br />
+            MUMBAI
           </h1>
 
           <p className="hero-subtitle">
@@ -260,7 +265,7 @@ function App() {
 
             <span className="hero-detail-item">
               <span className="detail-icon">▣</span>
-              OCTOBER 10–12, 2026
+              OCTOBER 9–11, 2026
             </span>
 
             <span className="detail-divider"></span>
@@ -272,32 +277,33 @@ function App() {
           </div>
 
           <div className="hero-cta-wrap">
-            <button
-              type="button"
-              onClick={() => scrollToSection("take-part")}
+            <a
+              href={GOOGLE_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="gold-button hero-button"
             >
               TAKE PART
-            </button>
+            </a>
 
             <button
               type="button"
               onClick={() => scrollToSection("what-is-this")}
               className="secondary-button hero-secondary-btn"
             >
-              DISCOVER THE ESTATE
+              DISCOVER THE GAME
             </button>
           </div>
 
           <div className="hero-limited">
-            BOXTEL LONAVALA · OCTOBER 10–12, 2026 · LIMITED TO 20 PLAYERS ONLY
+            BOXTEL LONAVALA · OCTOBER 9–11, 2026 · LIMITED TO 20 PLAYERS ONLY
           </div>
         </div>
       </section>
 
 
       {/* =====================================================
-          2. WHAT IS THE ESTATE?
+          2. WHAT IS THE TRAITORS MUMBAI?
       ===================================================== */}
 
       <section
@@ -310,7 +316,7 @@ function App() {
         <img
           className="section-bg-image"
           src={`${IMG}/masked-hero.png`}
-          alt="The Estate Atmosphere"
+          alt="The Traitors Atmosphere"
         />
 
         <div className="section-overlay"></div>
@@ -321,13 +327,13 @@ function App() {
           </div>
 
           <h2 className="section-heading">
-            WHAT IS THE ESTATE?
+            WHAT IS THE TRAITORS MUMBAI?
           </h2>
 
           <div className="gold-line"></div>
 
           <p>
-            <strong>The Estate</strong> is an exclusive 2-day immersive social-deduction experience
+            <strong>The Traitors Mumbai</strong> is an exclusive 2-day immersive social-deduction experience
             <br />
             of trust, strategy, alliances and deception.
           </p>
@@ -345,7 +351,7 @@ function App() {
 
         <div className="what-decoration">
           <div className="coin-symbol">
-            E
+            T
           </div>
         </div>
       </section>
@@ -365,7 +371,7 @@ function App() {
         <img
           className="section-bg-image"
           src={`${IMG}/sword.png`}
-          alt="Sword of The Estate"
+          alt="Sword of The Traitors"
         />
 
         <div className="section-overlay dark-overlay"></div>
@@ -435,7 +441,7 @@ function App() {
         <img
           className="shield-decoration"
           src={`${IMG}/shield.png`}
-          alt="Shield of The Estate"
+          alt="Shield of The Traitors"
         />
       </section>
 
@@ -481,7 +487,7 @@ function App() {
           </p>
 
           <p className="location-desc">
-            Nestled in the lush hills of Lonavala, Boxtel serves as the secluded backdrop for The Estate.
+            Nestled in the lush hills of Lonavala, Boxtel serves as the secluded backdrop for The Traitors Mumbai.
             With private accommodation, swimming pool, open courtyards, and mysterious corners,
             it is the ultimate stage for an immersive weekend of social deduction and strategic gameplay.
           </p>
@@ -560,7 +566,7 @@ function App() {
 
             <ExperienceItem
               icon="♟"
-              title="THE ESTATE GAME: STRATEGY & CHAOS"
+              title="THE TRAITORS GAME: STRATEGY & CHAOS"
               text="Secret identities, high-stakes missions, unexpected twists, and deceptive psychological strategy where trust is rare."
             />
 
@@ -655,7 +661,7 @@ function App() {
         <img
           className="section-bg-image"
           src={`${IMG}/sword.png`}
-          alt="What is included at The Estate"
+          alt="What is included at The Traitors Mumbai"
         />
 
         <div className="section-overlay stay-overlay"></div>
@@ -672,7 +678,7 @@ function App() {
           <div className="gold-line center"></div>
 
           <p className="stay-summary-text">
-            BOXTEL LONAVALA · OCTOBER 10–12, 2026 · 20 PLAYERS · 2 NIGHTS
+            BOXTEL LONAVALA · OCTOBER 9–11, 2026 · 20 PLAYERS · 2 NIGHTS · 8 MEALS
           </p>
 
           <div className="stay-inclusions-grid six-grid">
@@ -702,7 +708,7 @@ function App() {
 
             <div className="stay-inclusion-card">
               <span className="inclusion-icon">🎭</span>
-              <h3>The Estate Game</h3>
+              <h3>The Traitors Game</h3>
               <p>A fully immersive social-deduction game involving secret identities, alliances, missions, deception and elimination.</p>
             </div>
 
@@ -734,7 +740,7 @@ function App() {
         <img
           className="section-bg-image"
           src={`${IMG}/traitors-group.png`}
-          alt="Take Part in The Estate"
+          alt="Take Part in The Traitors Mumbai"
         />
 
         <div className="section-overlay take-part-overlay"></div>
@@ -745,7 +751,7 @@ function App() {
           </div>
 
           <h2>
-            READY TO ENTER THE ESTATE?
+            READY TO ENTER THE TRAITORS MUMBAI?
           </h2>
 
           <div className="gold-line center"></div>
@@ -778,12 +784,14 @@ function App() {
                 <div className="pricing-perk-item">✓ All Game Props & Materials</div>
               </div>
 
-              <Link
-                to="/take-part"
+              <a
+                href={GOOGLE_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="gold-button pricing-btn"
               >
                 TAKE PART
-              </Link>
+              </a>
             </div>
 
             {/* REGULAR TIER */}
@@ -809,12 +817,14 @@ function App() {
                 <div className="pricing-perk-item">✓ All Game Props & Materials</div>
               </div>
 
-              <Link
-                to="/take-part"
+              <a
+                href={GOOGLE_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="gold-button pricing-btn"
               >
                 TAKE PART
-              </Link>
+              </a>
             </div>
           </div>
 
@@ -839,7 +849,7 @@ function App() {
         <img
           className="section-bg-image faq-bg-image"
           src={`${IMG}/traitors-group.png`}
-          alt="The Estate Atmosphere"
+          alt="The Traitors Atmosphere"
         />
 
         <div className="faq-overlay"></div>
@@ -859,18 +869,18 @@ function App() {
 
           <div className="faq-grid">
             <FAQ
-              question="Where is The Estate?"
-              answer="The Estate takes place at Boxtel Lonavala, Maharashtra."
+              question="Where is The Traitors Mumbai?"
+              answer="The Traitors Mumbai takes place at Boxtel Lonavala, Maharashtra."
             />
 
             <FAQ
               question="How long is the experience?"
-              answer="The experience spans 2 days and 2 nights (October 10–12, 2026)."
+              answer="The experience spans 2 days and 2 nights (9, 10, 11 October, 2026)."
             />
 
             <FAQ
               question="What does my ticket include?"
-              answer="Your ticket includes accommodation for 2 nights, 8 meals, swimming pool access, the complete immersive game, game materials/props, and the overall Estate experience."
+              answer="Your ticket includes accommodation for 2 nights, 8 meals, swimming pool access, the complete immersive game, game materials/props, and the overall Traitors experience."
             />
 
             <FAQ
@@ -890,7 +900,7 @@ function App() {
 
             <FAQ
               question="Is this a normal board-game meetup?"
-              answer="No. The Estate is designed as a fully immersive social-deduction experience combining strategy, deception, alliances, missions and social interaction over two days."
+              answer="No. The Traitors Mumbai is designed as a fully immersive social-deduction experience combining strategy, deception, alliances, missions and social interaction over two days."
             />
           </div>
         </div>
@@ -904,13 +914,13 @@ function App() {
       <footer className="footer">
         <div className="footer-estate-brand">
           <div className="footer-brand-title">
-            THE ESTATE
+            THE TRAITORS MUMBAI
           </div>
           <div className="footer-brand-sub">
-            20 PLAYERS · 2 DAYS · 2 NIGHTS · 8 MEALS · BOXTEL LONAVALA · OCTOBER 10–12, 2026
+            20 PLAYERS · 2 DAYS · 2 NIGHTS · 8 MEALS · BOXTEL LONAVALA · 9, 10, 11 OCTOBER, 2026
           </div>
           <div className="footer-copy">
-            © 2026 The Estate. All rights reserved.
+            © 2026 The Traitors Mumbai. All rights reserved.
           </div>
         </div>
 

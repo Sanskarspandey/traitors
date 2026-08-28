@@ -3,21 +3,14 @@ import { Link } from "react-router-dom";
 import "./TakePart.css";
 
 const IMG = `${import.meta.env.BASE_URL || "/"}images`.replace(/\/\/+/g, "/");
+const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf0W9L1Jrk8_gJhqriE0zBwZ5xYP7SZFm1BtojvByX9gTB5rg/viewform";
 const INSTAGRAM_URL = "https://www.instagram.com/the_traitors_mumbai/";
 const CONTACT_PHONE = "+91 9372948245";
 
 function TakePart() {
   const [selectedTier, setSelectedTier] = useState("early-bird"); // "early-bird" | "regular"
-  const [ticketCount, setTicketCount] = useState(1);
 
   const pricePerTicket = selectedTier === "early-bird" ? 8499 : 9499;
-  const totalPrice = pricePerTicket * ticketCount;
-
-  const whatsappMessage = encodeURIComponent(
-    `Hi Sanskar, I want to reserve ${ticketCount} ticket(s) for The Estate at Boxtel Lonavala (October 10-12, 2026).\nSelected Tier: ${selectedTier === "early-bird" ? "Early Bird (₹8,499)" : "Regular (₹9,499)"}\nTotal: ₹${totalPrice.toLocaleString("en-IN")}.`
-  );
-
-  const bookingLink = `https://wa.me/919372948245?text=${whatsappMessage}`;
 
   return (
     <div className="take-page">
@@ -33,23 +26,23 @@ function TakePart() {
       {/* CONTENT */}
       <div className="take-page-content">
         <Link to="/" className="back-home">
-          ← BACK TO THE ESTATE
+          ← BACK TO THE TRAITORS MUMBAI
         </Link>
 
         {/* HEADER */}
         <div className="take-header">
-          <p className="gold-label">THE ESTATE · BOXTEL LONAVALA · OCTOBER 10–12, 2026</p>
+          <p className="gold-label">THE TRAITORS MUMBAI · BOXTEL LONAVALA · 9, 10, 11 OCTOBER, 2026</p>
 
           <h1>
-            RESERVE YOUR
+            TAKE PART.
             <br />
-            TICKET.
+            ENTER THE GAME.
           </h1>
 
           <div className="gold-line" />
 
           <p>
-            20 STRANGERS · 2 DAYS · 2 NIGHTS · 8 MEALS · ONE ESTATE.
+            20 STRANGERS · 2 DAYS · 2 NIGHTS · 8 MEALS · BOXTEL LONAVALA.
             <br />
             TRUST IS RARE, DHOKHA EVERYWHERE.
           </p>
@@ -62,9 +55,9 @@ function TakePart() {
             <div className="form-heading">
               <span>01</span>
               <div>
-                <h2>SELECT YOUR TICKET TIER</h2>
+                <h2>OFFICIAL GOOGLE REGISTRATION FORM</h2>
                 <p>
-                  Choose your ticket option below to secure your spot for The Estate at Boxtel Lonavala.
+                  Fill out the official Google Form below to register for The Traitors Mumbai at Boxtel Lonavala (October 9–11, 2026).
                 </p>
               </div>
             </div>
@@ -110,25 +103,25 @@ function TakePart() {
 
             {/* INCLUSIONS SUMMARY */}
             <div className="ticket-inclusions-block">
-              <span className="inclusions-title">WHAT YOUR TICKET INCLUDES:</span>
+              <span className="inclusions-title">WHAT YOUR REGISTRATION INCLUDES:</span>
               <ul className="inclusions-checklist">
                 <li>🏰 <strong>2-Day Immersive Experience:</strong> Full 2-day social-deduction game at Boxtel Lonavala</li>
                 <li>🛏️ <strong>Accommodation:</strong> 2 nights stay at Boxtel Lonavala</li>
                 <li>🍽️ <strong>8 Meals:</strong> Full dining provided throughout your entire stay</li>
                 <li>🏊 <strong>Swimming Pool:</strong> Pool access at the property</li>
-                <li>🎭 <strong>The Estate Game:</strong> Secret identities, missions, alliances & twists</li>
+                <li>🎭 <strong>The Traitors Game:</strong> Secret identities, missions, alliances & twists</li>
                 <li>🎲 <strong>Game Props & Materials:</strong> All masks, clues, and game accessories</li>
               </ul>
             </div>
 
-            {/* DIRECT BOOKING CTA */}
+            {/* DIRECT GOOGLE FORM CTA */}
             <a
-              href={bookingLink}
+              href={GOOGLE_FORM_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="payment-button request-entry-btn"
             >
-              <span>CONFIRM & BOOK VIA WHATSAPP (₹{totalPrice.toLocaleString("en-IN")})</span>
+              <span>OPEN OFFICIAL GOOGLE APPLICATION FORM</span>
               <span>→</span>
             </a>
 
@@ -141,7 +134,7 @@ function TakePart() {
             </div>
 
             <p className="consent-text" style={{ marginTop: "20px" }}>
-              Need direct assistance or customized arrangements? Call or WhatsApp Sanskar at <strong style={{ color: "#c5a45f" }}>{CONTACT_PHONE}</strong> or Instagram <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" style={{ color: "#c5a45f", textDecoration: "underline" }}>@the_traitors_mumbai</a>.
+              Questions or direct queries? Call or WhatsApp Sanskar at <strong style={{ color: "#c5a45f" }}>{CONTACT_PHONE}</strong> or Instagram <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" style={{ color: "#c5a45f", textDecoration: "underline" }}>@the_traitors_mumbai</a>.
             </p>
           </div>
 
@@ -150,15 +143,15 @@ function TakePart() {
               ================================= */}
           <aside className="price-panel">
             <div className="panel-top">
-              <span>THE ESTATE</span>
+              <span>THE TRAITORS</span>
               <div className="crest">♛</div>
-              <span>OCT 10–12</span>
+              <span>OCT 9–11</span>
             </div>
 
             <div className="panel-middle">
-              <p>TOTAL TICKET VALUE</p>
-              <h2>₹{totalPrice.toLocaleString("en-IN")}</h2>
-              <span>{selectedTier === "early-bird" ? "EARLY BIRD RATE (₹8,499/pp)" : "REGULAR RATE (₹9,499/pp)"}</span>
+              <p>PASS RATE</p>
+              <h2>₹{pricePerTicket.toLocaleString("en-IN")}</h2>
+              <span>{selectedTier === "early-bird" ? "EARLY BIRD RATE (₹8,499)" : "REGULAR RATE (₹9,499)"}</span>
 
               <div className="panel-line" />
 
