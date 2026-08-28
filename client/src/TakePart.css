@@ -1,5 +1,5 @@
 /* =========================================
-   THE TRAITORS MUMBAI — TAKE PART PAGE
+   THE ESTATE — LONAVALA | TICKETING
    Dark, Mysterious, Luxury & Fully Responsive
    ========================================= */
 
@@ -34,7 +34,7 @@
   position: fixed;
   inset: 0;
   z-index: 1;
-  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.92) 80%);
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.94) 80%);
   pointer-events: none;
 }
 
@@ -120,7 +120,7 @@
 
 .take-header {
   max-width: 850px;
-  margin-bottom: 55px;
+  margin-bottom: 50px;
 }
 
 .gold-label {
@@ -137,10 +137,10 @@
   margin: 0;
   color: #f3ead8;
   font-family: "Cinzel", Georgia, serif;
-  font-size: clamp(44px, 8.5vw, 100px);
+  font-size: clamp(40px, 8vw, 90px);
   font-weight: 400;
-  line-height: 0.92;
-  letter-spacing: 2px;
+  line-height: 0.94;
+  letter-spacing: 3px;
   text-shadow: 0 4px 30px rgba(0, 0, 0, 0.85);
 }
 
@@ -164,22 +164,22 @@
 
 .registration-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(340px, 0.85fr);
+  grid-template-columns: minmax(0, 1.4fr) minmax(320px, 0.85fr);
   gap: 40px;
   align-items: start;
   width: 100%;
 }
 
 /* =========================================
-   APPLICATION CARD
+   APPLICATION / TICKET CARD
    ========================================= */
 
 .player-form {
   position: relative;
   padding: clamp(26px, 4.5vw, 48px);
-  background: linear-gradient(135deg, rgba(15, 14, 12, 0.95), rgba(8, 7, 6, 0.92));
+  background: linear-gradient(135deg, rgba(15, 14, 12, 0.96), rgba(8, 7, 6, 0.94));
   border: 1px solid rgba(184, 155, 94, 0.35);
-  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(12px);
   width: 100%;
 }
@@ -187,7 +187,7 @@
 .form-heading {
   display: flex;
   gap: 18px;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
 
 .form-heading > span {
@@ -216,12 +216,175 @@
 }
 
 /* =========================================
+   TICKET TIERS SELECTOR
+   ========================================= */
+
+.ticket-tiers-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.ticket-tier-option {
+  border: 1px solid rgba(197, 160, 90, 0.3);
+  background: rgba(10, 8, 6, 0.75);
+  padding: 20px 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.ticket-tier-option:hover {
+  border-color: var(--gold-light, #e0c27c);
+  background: rgba(197, 160, 90, 0.08);
+}
+
+.ticket-tier-option.active {
+  border: 1.5px solid var(--gold, #c5a05a);
+  background: rgba(197, 160, 90, 0.14);
+  box-shadow: 0 0 25px rgba(197, 160, 90, 0.25);
+}
+
+.tier-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.tier-radio-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold, #c5a05a);
+  position: relative;
+}
+
+.ticket-tier-option.active .tier-radio-dot::after {
+  content: "";
+  position: absolute;
+  inset: 2.5px;
+  border-radius: 50%;
+  background: var(--gold, #c5a05a);
+}
+
+.tier-badge-label {
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 9.5px;
+  letter-spacing: 1.5px;
+  color: var(--gold-light, #e0c27c);
+  background: rgba(197, 160, 90, 0.15);
+  padding: 3px 8px;
+  border-radius: 2px;
+}
+
+.ticket-tier-option h3 {
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  margin: 0 0 8px;
+  color: #fff;
+}
+
+.tier-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.tier-price {
+  font-family: "Cinzel", Georgia, serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--gold-light, #e0c27c);
+}
+
+.tier-unit {
+  font-size: 12px;
+  color: #a7977b;
+}
+
+.tier-perk-summary {
+  font-size: 13px;
+  color: #c9bda0;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* =========================================
+   TICKET INCLUSIONS LIST
+   ========================================= */
+
+.ticket-inclusions-block {
+  border-top: 1px solid rgba(184, 155, 94, 0.25);
+  padding-top: 24px;
+  margin-bottom: 28px;
+}
+
+.inclusions-title {
+  color: #c5a45f;
+  letter-spacing: 2px;
+  font-size: 12px;
+  font-family: "Cinzel", Georgia, serif;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.inclusions-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.inclusions-checklist li {
+  font-size: 15px;
+  color: rgba(241, 234, 220, 0.88);
+  line-height: 1.5;
+}
+
+.inclusions-checklist li strong {
+  color: #fff;
+}
+
+/* =========================================
+   TRANSPORTATION BOX
+   ========================================= */
+
+.transport-note-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: rgba(197, 160, 90, 0.08);
+  border: 1px solid rgba(197, 160, 90, 0.25);
+  padding: 14px 18px;
+  margin: 24px 0 10px;
+}
+
+.transport-icon {
+  font-size: 18px;
+}
+
+.transport-note-box p {
+  margin: 0;
+  font-size: 13.5px;
+  color: #d6cbaf;
+  line-height: 1.45;
+}
+
+/* =========================================
    PAYMENT / ACTION BUTTON
    ========================================= */
 
 .payment-button {
   width: 100%;
-  padding: 16px 24px;
+  padding: 18px 24px;
   background: var(--gold, #c5a05a);
   color: #050505;
   border: none;
@@ -236,6 +399,8 @@
   transition: all 0.3s ease;
   box-shadow: 0 0 25px rgba(197, 160, 90, 0.3);
   text-transform: uppercase;
+  text-decoration: none;
+  box-sizing: border-box;
 }
 
 .payment-button:hover {
@@ -255,9 +420,9 @@
    ========================================= */
 
 .price-panel {
-  background: linear-gradient(135deg, rgba(15, 14, 12, 0.95), rgba(8, 7, 6, 0.92));
+  background: linear-gradient(135deg, rgba(15, 14, 12, 0.96), rgba(8, 7, 6, 0.94));
   border: 1px solid rgba(184, 155, 94, 0.35);
-  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(12px);
   width: 100%;
 }
@@ -275,7 +440,7 @@
 }
 
 .panel-top .crest {
-  font-size: 18px;
+  font-size: 20px;
   color: var(--gold, #c5a05a);
 }
 
@@ -296,7 +461,7 @@
   margin: 0;
   color: #fff;
   font-family: "Cinzel", Georgia, serif;
-  font-size: clamp(44px, 7vw, 64px);
+  font-size: clamp(40px, 6.5vw, 56px);
   font-weight: 700;
   letter-spacing: 1px;
 }
@@ -338,8 +503,8 @@
 
 .booking-info strong {
   color: #ede2cd;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 13px;
+  font-weight: 600;
   letter-spacing: 1px;
 }
 
@@ -394,7 +559,7 @@
   }
 
   .take-header h1 {
-    font-size: clamp(38px, 11vw, 56px);
+    font-size: clamp(34px, 10vw, 52px);
   }
 
   .gold-line {
@@ -408,6 +573,11 @@
   .form-heading {
     gap: 12px;
     margin-bottom: 24px;
+  }
+
+  .ticket-tiers-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 
   .panel-middle {

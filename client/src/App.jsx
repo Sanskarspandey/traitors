@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import "./App.css";
 
 const IMG = `${import.meta.env.BASE_URL || "/"}images`.replace(/\/\/+/g, "/");
-const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf0W9L1Jrk8_gJhqriE0zBwZ5xYP7SZFm1BtojvByX9gTB5rg/viewform";
 const INSTAGRAM_URL = "https://www.instagram.com/the_traitors_mumbai/";
+const CONTACT_PHONE = "+91 9372948245";
+const BOOKING_WHATSAPP = "https://wa.me/919372948245?text=Hi%20Sanskar%2C%20I%20want%20to%20book%20my%20ticket%20for%20The%20Estate%20at%20Boxtel%20Lonavala%20%28October%2010-12%29.";
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -53,14 +54,14 @@ function App() {
             onClick={() => scrollToSection("home")}
             role="button"
             tabIndex={0}
-            aria-label="The Traitors Mumbai Home"
+            aria-label="The Estate Home"
           >
             <div className="brand-symbol">
               ♛
             </div>
             <div className="brand-text">
               <div className="brand-name">
-                THE TRAITORS MUMBAI
+                THE ESTATE
               </div>
               <div className="brand-tagline">
                 TRUST IS RARE, DHOKHA EVERYWHERE
@@ -78,13 +79,16 @@ function App() {
             <button type="button" onClick={() => scrollToSection("how-it-works")}>
               HOW IT WORKS
             </button>
+            <button type="button" onClick={() => scrollToSection("location")}>
+              LOCATION
+            </button>
             <button type="button" onClick={() => scrollToSection("experience")}>
               THE EXPERIENCE
             </button>
             <button type="button" onClick={() => scrollToSection("rules")}>
               THE RULES
             </button>
-            <button type="button" onClick={() => scrollToSection("stay")}>
+            <button type="button" onClick={() => scrollToSection("included")}>
               WHAT'S INCLUDED
             </button>
             <button type="button" onClick={() => scrollToSection("faq")}>
@@ -92,14 +96,13 @@ function App() {
             </button>
           </nav>
 
-          <a
-            href={GOOGLE_FORM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            type="button"
+            onClick={() => scrollToSection("take-part")}
             className="nav-take-part desktop-only"
           >
-            REQUEST ENTRY
-          </a>
+            TAKE PART
+          </button>
 
           {/* Mobile Menu Toggle Button */}
           <button
@@ -133,7 +136,7 @@ function App() {
             <div className="mobile-menu-header">
               <div className="mobile-menu-brand" onClick={() => scrollToSection("home")}>
                 <span className="menu-crest">♛</span>
-                <span>THE TRAITORS</span>
+                <span>THE ESTATE</span>
               </div>
               <button
                 type="button"
@@ -160,39 +163,41 @@ function App() {
                 <span className="nav-num">III.</span>
                 <span className="nav-title">HOW IT WORKS</span>
               </button>
-              <button type="button" onClick={() => scrollToSection("experience")}>
+              <button type="button" onClick={() => scrollToSection("location")}>
                 <span className="nav-num">IV.</span>
+                <span className="nav-title">LOCATION</span>
+              </button>
+              <button type="button" onClick={() => scrollToSection("experience")}>
+                <span className="nav-num">V.</span>
                 <span className="nav-title">THE EXPERIENCE</span>
               </button>
               <button type="button" onClick={() => scrollToSection("rules")}>
-                <span className="nav-num">V.</span>
+                <span className="nav-num">VI.</span>
                 <span className="nav-title">THE RULES</span>
               </button>
-              <button type="button" onClick={() => scrollToSection("stay")}>
-                <span className="nav-num">VI.</span>
+              <button type="button" onClick={() => scrollToSection("included")}>
+                <span className="nav-num">VII.</span>
                 <span className="nav-title">WHAT'S INCLUDED</span>
               </button>
               <button type="button" onClick={() => scrollToSection("faq")}>
-                <span className="nav-num">VII.</span>
+                <span className="nav-num">VIII.</span>
                 <span className="nav-title">FAQ</span>
               </button>
             </nav>
 
             <div className="mobile-menu-cta-wrap">
-              <a
-                href={GOOGLE_FORM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
                 className="gold-button mobile-menu-cta"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => scrollToSection("take-part")}
               >
-                REQUEST ENTRY →
-              </a>
+                TAKE PART →
+              </button>
             </div>
 
             <div className="mobile-menu-footer">
               <div className="mobile-social-link">
-                <span className="menu-foot-label">FOLLOW THE GAME</span>
+                <span className="menu-foot-label">FOLLOW THE ESTATE</span>
                 <a
                   href={INSTAGRAM_URL}
                   target="_blank"
@@ -203,7 +208,7 @@ function App() {
                 </a>
               </div>
               <div className="mobile-contact-line">
-                <span>Host: Sanskar Pandey (+91 9372948245)</span>
+                <span>Host: Sanskar Pandey ({CONTACT_PHONE})</span>
               </div>
             </div>
           </div>
@@ -225,69 +230,74 @@ function App() {
         <img
           className="section-bg-image hero-bg-image"
           src={`${IMG}/masked-hero.png`}
-          alt="The Traitors Masked Figure"
+          alt="The Estate Masked Figure"
         />
 
         <div className="hero-overlay"></div>
 
         <div className="hero-content">
           <div className="hero-eyebrow">
-            20 STRANGERS · 2-DAY ESCAPE · SECRET DESTINATION
+            20 STRANGERS · ONE ESTATE · HIDDEN LOYALTIES · TWO DAYS
           </div>
 
           <h1 className="hero-title">
-            THE TRAITORS
-            <br />
-            MUMBAI
+            THE ESTATE
           </h1>
 
           <p className="hero-subtitle">
-            TRUST IS RARE, DHOKHA EVERYWHERE.
+            20 strangers. One estate. Hidden loyalties. Two days.
             <br />
-            AN IMMERSIVE 2-DAY ESCAPE TO THE HILLS.
+            TRUST IS RARE, DHOKHA EVERYWHERE.
           </p>
 
           <div className="hero-details">
             <span className="hero-detail-item">
-              <span className="detail-icon">▣</span>
-              24-25 OCTOBER, 2026
+              <span className="detail-icon">📍</span>
+              BOXTEL LONAVALA
             </span>
 
             <span className="detail-divider"></span>
 
             <span className="hero-detail-item">
-              <span className="detail-icon">◆</span>
-              SECRET HILLS DESTINATION
+              <span className="detail-icon">▣</span>
+              OCTOBER 10–12, 2026
             </span>
 
             <span className="detail-divider"></span>
 
             <span className="hero-detail-item">
               <span className="detail-icon">◈</span>
-              ₹6,000 / PERSON
+              20 PLAYERS · 2 NIGHTS · 8 MEALS
             </span>
           </div>
 
           <div className="hero-cta-wrap">
-            <a
-              href={GOOGLE_FORM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
+              onClick={() => scrollToSection("take-part")}
               className="gold-button hero-button"
             >
-              READY TO PLAY?
-            </a>
+              TAKE PART
+            </button>
+
+            <button
+              type="button"
+              onClick={() => scrollToSection("what-is-this")}
+              className="secondary-button hero-secondary-btn"
+            >
+              DISCOVER THE ESTATE
+            </button>
           </div>
 
           <div className="hero-limited">
-            LIMITED TO 20 PLAYERS ONLY · 24-25 OCTOBER, 2026
+            BOXTEL LONAVALA · OCTOBER 10–12, 2026 · LIMITED TO 20 PLAYERS ONLY
           </div>
         </div>
       </section>
 
 
       {/* =====================================================
-          2. WHAT IS THE TRAITORS MUMBAI?
+          2. WHAT IS THE ESTATE?
       ===================================================== */}
 
       <section
@@ -300,7 +310,7 @@ function App() {
         <img
           className="section-bg-image"
           src={`${IMG}/masked-hero.png`}
-          alt="The Traitors Atmosphere"
+          alt="The Estate Atmosphere"
         />
 
         <div className="section-overlay"></div>
@@ -311,31 +321,31 @@ function App() {
           </div>
 
           <h2 className="section-heading">
-            WHAT IS THE TRAITORS MUMBAI?
+            WHAT IS THE ESTATE?
           </h2>
 
           <div className="gold-line"></div>
 
           <p>
-            We’re taking <strong>20 strangers</strong> on a 2-day escape to the hills but there’s a catch.
+            <strong>The Estate</strong> is an exclusive 2-day immersive social-deduction experience
             <br />
-            You won’t know where you’re going until it’s time to go.
+            of trust, strategy, alliances and deception.
           </p>
 
           <p>
-            Don’t worry — this isn’t a sketchy mystery trip. You’re in safe hands with the hosts.
+            20 handpicked players enter Boxtel Lonavala. Some are loyal. Some are traitors.
             <br />
-            The location is secret because we want the whole weekend to feel like stepping into a real life game.
+            Your mission is simple: uncover the truth, form alliances, and survive.
           </p>
 
           <p className="strong-line">
-            Think: games, challenges, surprises, secrets and a little bit of chaos.
+            Trust no one.
           </p>
         </div>
 
         <div className="what-decoration">
           <div className="coin-symbol">
-            T
+            E
           </div>
         </div>
       </section>
@@ -376,8 +386,8 @@ function App() {
           <div className="steps">
             <Step
               icon="♟"
-              title="20 STRANGERS"
-              text="20 strangers depart together for the secret hills."
+              title="20 PLAYERS"
+              text="20 players arrive at Boxtel Lonavala for a 2-day escape."
             />
 
             <div className="step-arrow">
@@ -425,13 +435,88 @@ function App() {
         <img
           className="shield-decoration"
           src={`${IMG}/shield.png`}
-          alt="Shield of The Traitors"
+          alt="Shield of The Estate"
         />
       </section>
 
 
       {/* =====================================================
-          4. THE EXPERIENCE
+          4. LOCATION: BOXTEL LONAVALA
+      ===================================================== */}
+
+      <section
+        id="location"
+        className="section location-section"
+        style={{
+          backgroundImage: `url("${IMG}/mansion.png")`,
+        }}
+      >
+        <img
+          className="section-bg-image"
+          src={`${IMG}/mansion.png`}
+          alt="Boxtel Lonavala Estate"
+        />
+
+        <div className="section-overlay location-overlay"></div>
+
+        <div className="location-content">
+          <div className="section-number">
+            3.
+          </div>
+
+          <div className="location-header-wrap">
+            <span className="location-badge">THE SETTING</span>
+            <h2 className="location-title">
+              BOXTEL LONAVALA
+            </h2>
+            <div className="location-subtitle">
+              Lonavala, Maharashtra
+            </div>
+          </div>
+
+          <div className="gold-line center"></div>
+
+          <p className="location-quote">
+            “Two days. One secluded setting. Twenty players. Trust becomes your greatest weapon.”
+          </p>
+
+          <p className="location-desc">
+            Nestled in the lush hills of Lonavala, Boxtel serves as the secluded backdrop for The Estate.
+            With private accommodation, swimming pool, open courtyards, and mysterious corners,
+            it is the ultimate stage for an immersive weekend of social deduction and strategic gameplay.
+          </p>
+
+          <div className="location-features-grid">
+            <div className="loc-feat-card">
+              <span className="feat-icon">🏰</span>
+              <strong>Secluded Setting</strong>
+              <span>Private atmosphere in the hills of Lonavala</span>
+            </div>
+
+            <div className="loc-feat-card">
+              <span className="feat-icon">🏊</span>
+              <strong>Swimming Pool</strong>
+              <span>Property pool access throughout the stay</span>
+            </div>
+
+            <div className="loc-feat-card">
+              <span className="feat-icon">🛏️</span>
+              <strong>2 Nights Stay</strong>
+              <span>Comfortable lodging for all 20 players</span>
+            </div>
+
+            <div className="loc-feat-card">
+              <span className="feat-icon">🍽️</span>
+              <strong>8 Curated Meals</strong>
+              <span>Complete dining across both days</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* =====================================================
+          5. THE EXPERIENCE
       ===================================================== */}
 
       <section
@@ -451,7 +536,7 @@ function App() {
 
         <div className="experience-content">
           <div className="section-number">
-            3.
+            4.
           </div>
 
           <h2>
@@ -463,26 +548,26 @@ function App() {
           <div className="experience-list">
             <ExperienceItem
               icon="♜"
-              title="COME ALONE — DON'T BRING YOUR FRIENDS"
+              title="COME ALONE — ARRIVE AS STRANGERS"
               text="You don’t need to convince your friends to come. In fact, we’d rather you didn’t. The whole point is to arrive knowing nobody and leave with a whole new group."
             />
 
             <ExperienceItem
               icon="♨"
               title="TWO DAYS. NO ROUTINE."
-              text="For two days, forget your usual plans, step away from your routine and let us take care of the rest."
+              text="For two days and two nights, forget your usual plans, step away from your routine, and immerse yourself in the psychological battleground."
             />
 
             <ExperienceItem
               icon="♟"
-              title="GAMES, CHALLENGES & CHAOS"
-              text="Think: games, challenges, surprises, secrets and a little bit of chaos where trust is rare."
+              title="THE ESTATE GAME: STRATEGY & CHAOS"
+              text="Secret identities, high-stakes missions, unexpected twists, and deceptive psychological strategy where trust is rare."
             />
 
             <ExperienceItem
               icon="♠"
-              title="SECLUDED PROPERTY & NATURE"
-              text="Stay at a beautiful property amidst nature, gourmet meals, and an immersive game atmosphere."
+              title="BOXTEL LONAVALA SETTING"
+              text="Enjoy 2 nights stay, swimming pool access, 8 curated meals, and an unforgettable cinematic atmosphere in the hills of Maharashtra."
             />
           </div>
         </div>
@@ -490,7 +575,7 @@ function App() {
 
 
       {/* =====================================================
-          5. THE RULES
+          6. THE RULES
       ===================================================== */}
 
       <section
@@ -511,7 +596,7 @@ function App() {
         <div className="rules-inner">
           <div className="center-title">
             <div className="section-number">
-              4.
+              5.
             </div>
 
             <h2>
@@ -537,13 +622,13 @@ function App() {
             <Rule
               icon="◉"
               title="PLAY YOUR PART."
-              text="Commit to your role, complete challenges, and embrace the mystery."
+              text="Commit to your secret identity. Every decision matters."
             />
 
             <Rule
               icon="♟"
-              title="BE PREPARED FOR TWISTS."
-              text="Expect surprises, hidden clues, and secrets behind closed doors."
+              title="COMPLETE MISSIONS."
+              text="Tackle challenges, uncover clues, and survive the council."
             />
 
             <Rule
@@ -557,11 +642,11 @@ function App() {
 
 
       {/* =====================================================
-          6. WHAT'S INCLUDED
+          7. WHAT'S INCLUDED
       ===================================================== */}
 
       <section
-        id="stay"
+        id="included"
         className="section stay-section"
         style={{
           backgroundImage: `url("${IMG}/sword.png")`,
@@ -570,14 +655,14 @@ function App() {
         <img
           className="section-bg-image"
           src={`${IMG}/sword.png`}
-          alt="The Estate Stay Details"
+          alt="What is included at The Estate"
         />
 
         <div className="section-overlay stay-overlay"></div>
 
         <div className="stay-content">
           <div className="section-number">
-            5.
+            6.
           </div>
 
           <h2>
@@ -586,46 +671,57 @@ function App() {
 
           <div className="gold-line center"></div>
 
-          <div className="stay-pricing-badge">
-            <span className="stay-price">₹6,000</span>
-            <span className="stay-per">PER PERSON · ALL-INCLUSIVE</span>
-          </div>
-
           <p className="stay-summary-text">
-            TRIP DURATION: OCTOBER 24–25, 2026
+            BOXTEL LONAVALA · OCTOBER 10–12, 2026 · 20 PLAYERS · 2 NIGHTS
           </p>
 
-          <div className="stay-inclusions-grid">
+          <div className="stay-inclusions-grid six-grid">
             <div className="stay-inclusion-card">
               <span className="inclusion-icon">🏰</span>
-              <h3>Stay at a beautiful property amidst nature</h3>
-              <p>Exclusive private property nestled in the hills with serene natural surroundings</p>
+              <h3>2-Day Immersive Experience</h3>
+              <p>A full two-day social-deduction experience at Boxtel Lonavala.</p>
             </div>
 
             <div className="stay-inclusion-card">
-              <span className="inclusion-icon">🍷</span>
-              <h3>Breakfast & Dinner</h3>
-              <p>Curated meals and dining provided across both days</p>
+              <span className="inclusion-icon">🛏️</span>
+              <h3>Accommodation</h3>
+              <p>2 nights accommodation at Boxtel Lonavala.</p>
+            </div>
+
+            <div className="stay-inclusion-card">
+              <span className="inclusion-icon">🍽️</span>
+              <h3>8 Meals</h3>
+              <p>8 meals throughout the stay.</p>
+            </div>
+
+            <div className="stay-inclusion-card">
+              <span className="inclusion-icon">🏊</span>
+              <h3>Swimming Pool</h3>
+              <p>Access to the swimming pool at the property.</p>
             </div>
 
             <div className="stay-inclusion-card">
               <span className="inclusion-icon">🎭</span>
-              <h3>Games, challenges & unexpected twists</h3>
-              <p>Full immersive game storyline, secret missions & props</p>
+              <h3>The Estate Game</h3>
+              <p>A fully immersive social-deduction game involving secret identities, alliances, missions, deception and elimination.</p>
             </div>
 
             <div className="stay-inclusion-card">
-              <span className="inclusion-icon">👥</span>
-              <h3>20 strangers who might not be strangers by the end</h3>
-              <p>A handpicked group of adventurous individuals sharing an unforgettable escape</p>
+              <span className="inclusion-icon">🎲</span>
+              <h3>Game Props & Materials</h3>
+              <p>All required game materials and props are included.</p>
             </div>
+          </div>
+
+          <div className="transport-notice">
+            <span>ℹ️ Note: Transportation to and from Lonavala is not included in the ticket price.</span>
           </div>
         </div>
       </section>
 
 
       {/* =====================================================
-          7. TAKE PART
+          8. TICKETING / TAKE PART
       ===================================================== */}
 
       <section
@@ -645,61 +741,92 @@ function App() {
 
         <div className="take-part-inner">
           <div className="section-number">
-            6.
+            7.
           </div>
 
           <h2>
-            READY TO PLAY?
+            READY TO ENTER THE ESTATE?
           </h2>
 
           <div className="gold-line center"></div>
 
-          <div className="entry-card">
-            <div className="entry-column">
-              <span className="entry-label">
-                EXPERIENCE FEE
-              </span>
-              <span className="entry-price">
-                ₹6,000
-              </span>
-              <span className="entry-note">
-                PER PERSON · STAY, MEALS & GAME
-              </span>
-            </div>
+          <p className="take-part-tagline">
+            20 players. 2 days. One question: Who can you trust?
+          </p>
 
-            <div className="entry-middle">
-              <a
-                href={GOOGLE_FORM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="gold-button"
+          <div className="pricing-cards-container">
+            {/* EARLY BIRD TIER */}
+            <div className="pricing-card featured-tier">
+              <div className="pricing-badge-top">
+                LIMITED EARLY-BIRD SEATS
+              </div>
+              <div className="pricing-tier-name">
+                EARLY BIRD
+              </div>
+              <div className="pricing-price">
+                ₹8,499
+              </div>
+              <div className="pricing-sub">
+                PER PERSON · ALL-INCLUSIVE PASS
+              </div>
+
+              <div className="pricing-perks">
+                <div className="pricing-perk-item">✓ 2-Day Immersive Game Experience</div>
+                <div className="pricing-perk-item">✓ 2 Nights Stay at Boxtel Lonavala</div>
+                <div className="pricing-perk-item">✓ 8 Meals Throughout Stay</div>
+                <div className="pricing-perk-item">✓ Swimming Pool Access</div>
+                <div className="pricing-perk-item">✓ All Game Props & Materials</div>
+              </div>
+
+              <Link
+                to="/take-part"
+                className="gold-button pricing-btn"
               >
-                REQUEST ENTRY
-              </a>
-
-              <span>
-                20 STRANGERS · 24-25 OCTOBER, 2026
-              </span>
+                TAKE PART
+              </Link>
             </div>
 
-            <div className="entry-column">
-              <span className="entry-label">
-                CAPACITY
-              </span>
-              <span className="entry-price">
-                20
-              </span>
-              <span className="entry-note">
-                STRANGERS ONLY
-              </span>
+            {/* REGULAR TIER */}
+            <div className="pricing-card">
+              <div className="pricing-badge-top regular-badge">
+                STANDARD ADMISSION
+              </div>
+              <div className="pricing-tier-name">
+                REGULAR
+              </div>
+              <div className="pricing-price">
+                ₹9,499
+              </div>
+              <div className="pricing-sub">
+                PER PERSON · ALL-INCLUSIVE PASS
+              </div>
+
+              <div className="pricing-perks">
+                <div className="pricing-perk-item">✓ 2-Day Immersive Game Experience</div>
+                <div className="pricing-perk-item">✓ 2 Nights Stay at Boxtel Lonavala</div>
+                <div className="pricing-perk-item">✓ 8 Meals Throughout Stay</div>
+                <div className="pricing-perk-item">✓ Swimming Pool Access</div>
+                <div className="pricing-perk-item">✓ All Game Props & Materials</div>
+              </div>
+
+              <Link
+                to="/take-part"
+                className="gold-button pricing-btn"
+              >
+                TAKE PART
+              </Link>
             </div>
+          </div>
+
+          <div className="transport-disclaimer">
+            Transportation to and from Lonavala is not included in the ticket price.
           </div>
         </div>
       </section>
 
 
       {/* =====================================================
-          8. FAQ
+          9. FAQ
       ===================================================== */}
 
       <section
@@ -712,7 +839,7 @@ function App() {
         <img
           className="section-bg-image faq-bg-image"
           src={`${IMG}/traitors-group.png`}
-          alt="The Traitors Group Atmosphere"
+          alt="The Estate Atmosphere"
         />
 
         <div className="faq-overlay"></div>
@@ -720,7 +847,7 @@ function App() {
         <div className="faq-content">
           <div className="faq-title">
             <span className="section-number">
-              7.
+              8.
             </span>
 
             <h2>
@@ -732,43 +859,38 @@ function App() {
 
           <div className="faq-grid">
             <FAQ
-              question="What is The Traitors Mumbai?"
-              answer="We’re taking 20 strangers on a 2-day escape to the hills for an immersive weekend of games, challenges, surprises, secrets, and a little bit of chaos."
+              question="Where is The Estate?"
+              answer="The Estate takes place at Boxtel Lonavala, Maharashtra."
             />
 
             <FAQ
-              question="Why is the location secret?"
-              answer="You won’t know where you’re going until it’s time to go. The location is secret because we want the whole weekend to feel like stepping into a real-life game. The property is a beautiful, safe property amidst nature in the hills."
+              question="How long is the experience?"
+              answer="The experience spans 2 days and 2 nights (October 10–12, 2026)."
             />
 
             <FAQ
-              question="Is it safe if I'm coming alone?"
-              answer="100% safe. You are in safe hands with the hosts. In fact, coming alone is the core rule: you arrive knowing nobody and leave with a whole new group."
+              question="What does my ticket include?"
+              answer="Your ticket includes accommodation for 2 nights, 8 meals, swimming pool access, the complete immersive game, game materials/props, and the overall Estate experience."
             />
 
             <FAQ
-              question="When is the trip taking place?"
-              answer="Trip duration: 24-25 October, 2026 (Saturday morning to Sunday evening)."
+              question="Is transportation included?"
+              answer="No. Transportation to and from Lonavala is not included in the ticket price."
             />
 
             <FAQ
-              question="What does the ₹6,000 pass include?"
-              answer="It includes your stay at a beautiful property amidst nature, breakfast & dinner across both days, and all games, challenges, and unexpected twists."
+              question="How many players are there?"
+              answer="The core game is designed for 20 players."
             />
 
             <FAQ
-              question="Can I bring my friends?"
-              answer="You don’t need to convince your friends to come — in fact, we’d rather you didn’t! The whole point is to arrive knowing nobody and leave with a whole new group."
+              question="What is the ticket price?"
+              answer="Early Bird: ₹8,499 (limited seats). Regular: ₹9,499."
             />
 
             <FAQ
-              question="How are the 20 players chosen?"
-              answer="Interested participants submit their application through our form. Our hosts review entries to ensure a balanced, fun, and safe group of 20 players."
-            />
-
-            <FAQ
-              question="What happens after I apply?"
-              answer="Our team reviews all entries. Selected participants will be contacted directly via WhatsApp/Call with confirmation, travel coordinates, and next steps."
+              question="Is this a normal board-game meetup?"
+              answer="No. The Estate is designed as a fully immersive social-deduction experience combining strategy, deception, alliances, missions and social interaction over two days."
             />
           </div>
         </div>
@@ -782,13 +904,13 @@ function App() {
       <footer className="footer">
         <div className="footer-estate-brand">
           <div className="footer-brand-title">
-            THE TRAITORS MUMBAI
+            THE ESTATE
           </div>
           <div className="footer-brand-sub">
-            TRUST IS RARE, DHOKHA EVERYWHERE · 20 STRANGERS · 24-25 OCTOBER, 2026
+            20 PLAYERS · 2 DAYS · 2 NIGHTS · 8 MEALS · BOXTEL LONAVALA · OCTOBER 10–12, 2026
           </div>
           <div className="footer-copy">
-            © 2026 The Traitors Mumbai. All rights reserved.
+            © 2026 The Estate. All rights reserved.
           </div>
         </div>
 
@@ -796,8 +918,8 @@ function App() {
           <div className="footer-contact-block">
             <span className="footer-section-label">CONTACT</span>
             <div className="footer-contact-name">Sanskar Pandey</div>
-            <a href="tel:+919372948245" className="footer-contact-link">
-              +91 9372948245
+            <a href={`tel:${CONTACT_PHONE.replace(/\s+/g, "")}`} className="footer-contact-link">
+              {CONTACT_PHONE}
             </a>
           </div>
 
