@@ -10,7 +10,7 @@ const CONTACT_PHONE = "+91 9372948245";
 function TakePart() {
   const [selectedTier, setSelectedTier] = useState("early-bird"); // "early-bird" | "regular"
 
-  const pricePerTicket = selectedTier === "early-bird" ? 8499 : 9499;
+  const pricePerTicket = selectedTier === "early-bird" ? 6499 : 7499;
 
   return (
     <div className="take-page">
@@ -74,7 +74,7 @@ function TakePart() {
                 </div>
                 <h3>EARLY BIRD PASS</h3>
                 <div className="tier-price-row">
-                  <span className="tier-price">₹8,499</span>
+                  <span className="tier-price">₹6,499</span>
                   <span className="tier-unit">/ person</span>
                 </div>
                 <p className="tier-perk-summary">
@@ -92,7 +92,7 @@ function TakePart() {
                 </div>
                 <h3>REGULAR PASS</h3>
                 <div className="tier-price-row">
-                  <span className="tier-price">₹9,499</span>
+                  <span className="tier-price">₹7,499</span>
                   <span className="tier-unit">/ person</span>
                 </div>
                 <p className="tier-perk-summary">
@@ -151,7 +151,7 @@ function TakePart() {
             <div className="panel-middle">
               <p>PASS RATE</p>
               <h2>₹{pricePerTicket.toLocaleString("en-IN")}</h2>
-              <span>{selectedTier === "early-bird" ? "EARLY BIRD RATE (₹8,499)" : "REGULAR RATE (₹9,499)"}</span>
+              <span>{selectedTier === "early-bird" ? "EARLY BIRD RATE (₹6,499)" : "REGULAR RATE (₹7,499)"}</span>
 
               <div className="panel-line" />
 

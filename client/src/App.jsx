@@ -770,7 +770,7 @@ function App() {
                 EARLY BIRD
               </div>
               <div className="pricing-price">
-                ₹8,499
+                ₹6,499
               </div>
               <div className="pricing-sub">
                 PER PERSON · ALL-INCLUSIVE PASS
@@ -803,7 +803,7 @@ function App() {
                 REGULAR
               </div>
               <div className="pricing-price">
-                ₹9,499
+                ₹7,499
               </div>
               <div className="pricing-sub">
                 PER PERSON · ALL-INCLUSIVE PASS
@@ -895,7 +895,7 @@ function App() {
 
             <FAQ
               question="What is the ticket price?"
-              answer="Early Bird: ₹8,499 (limited seats). Regular: ₹9,499."
+              answer="Early Bird: ₹6,499 (limited seats). Regular: ₹7,499."
             />
 
             <FAQ
